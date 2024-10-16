@@ -11,9 +11,12 @@ public class LoadScene : MonoBehaviour
 
     private void Start()
     {
-
+/*
         sceneCount = SceneManager.sceneCount;
+        //display sceneNumber
         Debug.Log("sceneCount=" + sceneCount);
+*/
+
     }
 
 
