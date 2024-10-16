@@ -45,11 +45,12 @@ public  class Panel : MonoBehaviour
 
             }
 
-
-
-
-
         }
+
+
+
+
+
 
     }
 

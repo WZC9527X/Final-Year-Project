@@ -7,11 +7,7 @@ public class GameManager : MonoBehaviour
 {
     void Start()
     {
-        MouseControl(false);
-
-
-
-
+        
 
     }
 
@@ -25,12 +21,16 @@ public class GameManager : MonoBehaviour
     {
         if (YN)
         {
+            //Hide Mouse
+            //MouseControl(true);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = true;
 
         }
         else
         {
+            //Display Mouse
+            //MouseControl(false);
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = false;
         }

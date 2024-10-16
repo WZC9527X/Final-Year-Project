@@ -356,6 +356,7 @@
 "Assets/FYP/Script/GameManager.cs"
 "Assets/FYP/Script/Player/LoadScene.cs"
 "Assets/FYP/Script/Player/PlayerMovement.cs"
+"Assets/FYP/Script/Player/RayDetection.cs"
 "Assets/FYP/Script/UI/Button.cs"
 "Assets/FYP/Script/UI/Panel.cs"
 "Assets/LeanTween/Examples/Scripts/Following.cs"

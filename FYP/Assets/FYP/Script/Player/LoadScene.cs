@@ -7,6 +7,7 @@ public class LoadScene : MonoBehaviour
 {
     int randomScene;
     int sceneCount;
+    GameManager mouseControl = new GameManager();
 
     private void Start()
     {
@@ -30,11 +31,9 @@ public class LoadScene : MonoBehaviour
         {
      
             SceneManager.LoadScene(RandomNunber());
-
-
         }
-        
 
+       // mouseControl.MouseControl(true);
 
     }
 
