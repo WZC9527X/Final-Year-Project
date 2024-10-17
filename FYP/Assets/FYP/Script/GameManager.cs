@@ -1,37 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
-
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public bool hideMouse;
     void Start()
     {
-        
+        if (hideMouse)
+        {
+            MouseControl(false);
+        }
+        else
+        {
+            MouseControl(true);
+        }
 
     }
 
-
     void Update()
     {
+       
 
+        
     }
 
     public void MouseControl(bool YN)
     {
         if (YN)
         {
-            //Hide Mouse
+            
+            //Display Mouse
             //MouseControl(true);
-            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
 
         }
         else
         {
-            //Display Mouse
+            //Hide Mouse
             //MouseControl(false);
-            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
 

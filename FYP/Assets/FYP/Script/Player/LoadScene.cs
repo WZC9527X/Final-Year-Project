@@ -25,12 +25,16 @@ public class LoadScene : MonoBehaviour
         if (other.gameObject.name == "SphereWin")
         {
             SceneManager.LoadScene("Win");
+            
 
-        }else if (other.gameObject.name == "SphereLose")
+        }
+        else if (other.gameObject.name == "SphereLose")
         {
             SceneManager.LoadScene("Lose");
-
-        }else if (other.gameObject.name == "RandomScene")
+            
+        }
+        
+        if (other.gameObject.name == "RandomScene")
         {
      
             SceneManager.LoadScene(RandomNunber());

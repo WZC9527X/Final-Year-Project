@@ -36,7 +36,7 @@ public  class Panel : MonoBehaviour
                 panel.SetActive(true);
                 canvasGroup.alpha = 0f;
                 LeanTween.alphaCanvas(canvasGroup, 1f, 0.5f).setEaseInCubic();
-             //   mouseControl.MouseControl(false);
+                mouseControl.MouseControl(true);
             }
             else
             {
@@ -47,7 +47,7 @@ public  class Panel : MonoBehaviour
                     }
 
                 );
-              //  mouseControl.MouseControl(true);
+                mouseControl.MouseControl(false);
 
             }
 
