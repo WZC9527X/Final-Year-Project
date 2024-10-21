@@ -5,10 +5,19 @@ using UnityEngine;
 
 public class RayDetection : MonoBehaviour
 {
-    
+    Panel Panel = new Panel();
+    public GameObject eKey;
+
+    void Start()
+    {
+        
+    }
 
     public void Update()
     {
+        
+
+        
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
@@ -21,21 +30,36 @@ public class RayDetection : MonoBehaviour
             //print(hit.transform.gameObject.name);
             Debug.DrawRay(ray.origin, hit.transform.position, Color.red);
 
-            Debug.Log(hit.transform.gameObject);
             //准星選取物體
             //Debug.Log("當前准星選取物體:" + hit.transform.gameObject.name);
-            SelectOJPanel.selectOBJ = hit.transform.gameObject;
+
+            Panel.displayOJ = (hitOJ.name);
+
             
+            itemPickup(hitOJ);
+
+        }
+    }
+
+
+    public void itemPickup(GameObject item)
+    {
+        if (item.tag == "item")
+        {
+            eKey.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+            //    print(item.tag);
+                Destroy(item);
+            }
+
         }
         else
         {
-            //hit no collisions
-        /*    if(hit.collider == null)
-            {
-               
-            }
-        */
-            SelectOJPanel.selectOBJ = null;
+            eKey.SetActive(false);
+
         }
-    }   
+    }
+
+    
 }
