@@ -1,39 +1,35 @@
-using TMPro;
-using Unity.VisualScripting;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-
 [RequireComponent(typeof(CanvasGroup))]
-public  class Panel : MonoBehaviour
+public class SettingPanel : MonoBehaviour
 {
-    GameManager mouseControl = new GameManager();
-   
-    
-    public static string displayOJ;
-    public GameObject panel;
+    public GameObject settingpPanel;
     private CanvasGroup canvasGroup;
-    public TextMeshProUGUI selectObject;
+    GameManager mouseControl = new GameManager();
 
     void Start()
     {
         canvasGroup = this.GetComponent<CanvasGroup>();
         canvasGroup.alpha = 0f;
-        selectObject.color = Color.yellow;
-
-        
     }
+
 
     void Update()
     {
-        selectObject.text = displayOJ;
-       
+        settingPanel();
+    }
 
 
+    void settingPanel()
+    {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!panel.activeSelf) 
+            
+            if (!settingpPanel.activeSelf)
             {
-                panel.SetActive(true);
+                settingpPanel.SetActive(true);
                 canvasGroup.alpha = 0f;
                 LeanTween.alphaCanvas(canvasGroup, 1f, 0.5f).setEaseInCubic();
                 mouseControl.MouseControl(true);
@@ -43,7 +39,7 @@ public  class Panel : MonoBehaviour
                 LeanTween.alphaCanvas(canvasGroup, 0f, 0.5f).setEaseOutCubic().setOnComplete(
                     () =>
                     {
-                        panel.SetActive(false);
+                        settingpPanel.SetActive(false);
                     }
 
                 );
@@ -52,14 +48,5 @@ public  class Panel : MonoBehaviour
             }
 
         }
-
-
-
-
-
-
     }
-
-
-
 }
