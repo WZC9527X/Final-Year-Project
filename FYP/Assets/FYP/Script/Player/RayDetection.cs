@@ -12,20 +12,24 @@ public class RayDetection : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        Debug.DrawRay(ray.origin, Vector3.forward * 100f, Color.red);
+        Debug.DrawRay(ray.origin, Vector3.forward * 10f, Color.red);
 
         // check ray collision
-        if (Physics.Raycast(ray, out hit, 100))
+        if (Physics.Raycast(ray, out hit, 10))
         {
             GameObject hitOJ = hit.transform.gameObject;
             //print(hit.transform.gameObject.name);
             Debug.DrawRay(ray.origin, hit.transform.position, Color.red);
 
-            Debug.Log(hit.transform.gameObject);
+            //Debug.Log(hit.transform.gameObject);
             //准星選取物體
             //Debug.Log("當前准星選取物體:" + hit.transform.gameObject.name);
-            SelectOJPanel.selectOBJ = hit.transform.gameObject;
             
+            
+            SelectOJPanel.selectOBJ = hit.transform.gameObject;
+
+            
+
         }
         else
         {
