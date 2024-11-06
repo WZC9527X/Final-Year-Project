@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-
 [RequireComponent(typeof(CharacterController))]
 
 public class PlayerMovement : MonoBehaviour
@@ -32,6 +31,10 @@ public class PlayerMovement : MonoBehaviour
 
     public float crouchSpeed = 3f;
 
+    public HUD Hud;
+
+    public Inventory inventory;
+
 
 
     private Vector3 moveDirection = Vector3.zero;
@@ -39,6 +42,8 @@ public class PlayerMovement : MonoBehaviour
     private float rotationX = 0;
 
     private CharacterController characterController;
+
+    private IInventoryItem mItemToPickup = null;
 
 
 
@@ -76,6 +81,12 @@ public class PlayerMovement : MonoBehaviour
         float movementDirectionY = moveDirection.y;
 
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
+
+        if(mItemToPickup != null && Input.GetKeyDown(KeyCode.E))
+        {
+            inventory.AddItem(mItemToPickup);
+            mItemToPickup.OnPickup();
+        }
 
 
 
@@ -155,4 +166,21 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        IInventoryItem item = other.GetComponent<IInventoryItem>();
+        if (item != null)
+        {
+            inventory.AddItem(item);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        IInventoryItem item = other.GetComponent<IInventoryItem>();
+        if (item != null)
+        {
+            mItemToPickup = null;
+        }
+    }
 }

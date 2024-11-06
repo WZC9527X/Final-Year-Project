@@ -5,6 +5,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public bool hideMouse;
+
+    public static GameManager Instance = null;
+
     void Start()
     {
         if (hideMouse)
@@ -46,6 +49,8 @@ public class GameManager : MonoBehaviour
 
 
     }
+
+    
     
    
 
