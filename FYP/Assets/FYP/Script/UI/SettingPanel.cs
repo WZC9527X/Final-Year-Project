@@ -18,35 +18,35 @@ public class SettingPanel : MonoBehaviour
 
     void Update()
     {
-        settingPanel();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            settingPanel();
+        }
     }
 
 
-    void settingPanel()
+    public void settingPanel()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+
+        if (!settingpPanel.activeSelf)
         {
-            
-            if (!settingpPanel.activeSelf)
-            {
-                settingpPanel.SetActive(true);
-                canvasGroup.alpha = 0f;
-                LeanTween.alphaCanvas(canvasGroup, 1f, 0.5f).setEaseInCubic();
-                mouseControl.MouseControl(true);
-            }
-            else
-            {
-                LeanTween.alphaCanvas(canvasGroup, 0f, 0.5f).setEaseOutCubic().setOnComplete(
-                    () =>
-                    {
-                        settingpPanel.SetActive(false);
-                    }
+            settingpPanel.SetActive(true);
+            canvasGroup.alpha = 0f;
+            LeanTween.alphaCanvas(canvasGroup, 1f, 0.5f).setEaseInCubic();
+            mouseControl.MouseControl(true);
+        }
+        else
+        {
+            LeanTween.alphaCanvas(canvasGroup, 0f, 0.5f).setEaseOutCubic().setOnComplete(
+                () =>
+                {
+                    settingpPanel.SetActive(false);
+                }
 
-                );
-                mouseControl.MouseControl(false);
-
-            }
+            );
+            mouseControl.MouseControl(false);
 
         }
+        
     }
 }
