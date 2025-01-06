@@ -7164,6 +7164,63 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Inventory: {fileID: 129411363}
+--- !u!1001 &1669763619
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6317896348480712409, guid: 09178afbbbcdf5144beba9f8932624eb, type: 3}
+      propertyPath: m_Name
+      value: floor_blood
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898018044196054908, guid: 09178afbbbcdf5144beba9f8932624eb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 31.037376
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898018044196054908, guid: 09178afbbbcdf5144beba9f8932624eb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898018044196054908, guid: 09178afbbbcdf5144beba9f8932624eb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.685368
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898018044196054908, guid: 09178afbbbcdf5144beba9f8932624eb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.70710784
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898018044196054908, guid: 09178afbbbcdf5144beba9f8932624eb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.70710576
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898018044196054908, guid: 09178afbbbcdf5144beba9f8932624eb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898018044196054908, guid: 09178afbbbcdf5144beba9f8932624eb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898018044196054908, guid: 09178afbbbcdf5144beba9f8932624eb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898018044196054908, guid: 09178afbbbcdf5144beba9f8932624eb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898018044196054908, guid: 09178afbbbcdf5144beba9f8932624eb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 09178afbbbcdf5144beba9f8932624eb, type: 3}
 --- !u!1 &1680136342
 GameObject:
   m_ObjectHideFlags: 0
@@ -8580,7 +8637,7 @@ Transform:
   m_GameObject: {fileID: 4345475030910155147}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071069, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 4.7451506, y: -1.8450773, z: 0.9558563}
+  m_LocalPosition: {x: 4.7451506, y: -43.83, z: -0.28}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8620,7 +8677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Red Gem
-  Image: {fileID: 21300000, guid: 0819b1b381cb10548aa334239d55801b, type: 3}
+  Image: {fileID: 21300000, guid: 5f7fa9a7940a64e79b5a42d9f661d42c, type: 3}
   InteractText: 
   ItemType: 0
   PickPosition: {x: -0.00014, y: 0.00091, z: 0.00124}
@@ -8733,3 +8790,4 @@ SceneRoots:
   - {fileID: 6882303}
   - {fileID: 973208245}
   - {fileID: 9132188547152316813}
+  - {fileID: 1669763619}

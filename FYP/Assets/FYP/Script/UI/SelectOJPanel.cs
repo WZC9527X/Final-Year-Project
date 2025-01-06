@@ -43,6 +43,22 @@ public class SelectOJPanel : MonoBehaviour
                     Destroy(selectOBJ);
                 }
             }
+            else if (selectOBJ.tag == "blood")
+            {
+                /*
+                var spriteRenderer = selectOBJ.GetComponent<SpriteRenderer>();
+
+                Color color = spriteRenderer.color;
+                color.a = color.a - 0.25f;
+                spriteRenderer.color = color;
+                */
+                eKey.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    print(selectOBJ);
+                    Destroy(selectOBJ);
+                }
+            }
             else if (selectOBJ.tag == "door")
             {
                 door = selectOBJ.GetComponent<Animator>();
