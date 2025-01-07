@@ -3237,7 +3237,7 @@ Transform:
   m_GameObject: {fileID: 705507993}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: -16.66}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3747,7 +3747,7 @@ Transform:
   m_GameObject: {fileID: 902564569}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.49, y: -0.78, z: 2.218}
+  m_LocalPosition: {x: -12.9, y: -0.78, z: -20.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5228,7 +5228,7 @@ Transform:
   m_GameObject: {fileID: 1241388229}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.49, y: -0.24, z: -0.88}
+  m_LocalPosition: {x: -12.9, y: -0.24, z: -23.668001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7701,9 +7701,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2305028529129886342, guid: 8b9fe96ca437fc849898f3a8276f5018, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.29
+      objectReference: {fileID: 0}
     - target: {fileID: 4774042303162082176, guid: 8b9fe96ca437fc849898f3a8276f5018, type: 3}
       propertyPath: m_Name
       value: MapScene0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223965716357217104, guid: 8b9fe96ca437fc849898f3a8276f5018, type: 3}
+      propertyPath: m_Size.z
+      value: 4.5553026
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223965716357217104, guid: 8b9fe96ca437fc849898f3a8276f5018, type: 3}
+      propertyPath: m_Center.z
+      value: -1.7776511
       objectReference: {fileID: 0}
     - target: {fileID: 6432751050562454795, guid: 8b9fe96ca437fc849898f3a8276f5018, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7744,6 +7756,14 @@ PrefabInstance:
     - target: {fileID: 6432751050562454795, guid: 8b9fe96ca437fc849898f3a8276f5018, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648251689901625043, guid: 8b9fe96ca437fc849898f3a8276f5018, type: 3}
+      propertyPath: m_Size.z
+      value: 2.7058127
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648251689901625043, guid: 8b9fe96ca437fc849898f3a8276f5018, type: 3}
+      propertyPath: m_Center.z
+      value: -0.8529063
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

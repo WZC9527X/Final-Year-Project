@@ -17,18 +17,5 @@ public class Button : MonoBehaviour
         
     }
 
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
 
-    public void SwitchScene0() //Start
-    {
-        SceneManager.LoadScene(0);
-    }
-
-    public void SwitchScene1() // Play
-    {
-        SceneManager.LoadScene(1);
-    }
 }

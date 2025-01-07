@@ -9,35 +9,22 @@ public class LoadScene : MonoBehaviour
     int sceneCount;
     GameManager mouseControl = new GameManager();
 
-    private void Start()
-    {
-/*
-        sceneCount = SceneManager.sceneCount;
-        //display sceneNumber
-        Debug.Log("sceneCount=" + sceneCount);
-*/
-
-    }
-
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name == "SphereWin")
         {
-            SceneManager.LoadScene("Win");
-            
+            Win_Scene();
 
         }
-        else if (other.gameObject.name == "SphereLose")
+        if (other.gameObject.name == "SphereLose")
         {
-            SceneManager.LoadScene("Lose");
-            
+            Lose_Scene();
+
         }
-        
         if (other.gameObject.name == "RandomScene")
         {
-     
-            SceneManager.LoadScene(RandomNunber());
+            RandomScene();
+            
         }
 
        // mouseControl.MouseControl(true);
@@ -47,22 +34,59 @@ public class LoadScene : MonoBehaviour
  
     private int RandomNunber()
     {
+        sceneCount = SceneManager.sceneCount;
+        //display sceneNumber
+        //Debug.Log("sceneCount=" + sceneCount);
         do
         {
             randomScene = Random.Range(0, 4);
-            Debug.Log("randomScene =" + randomScene);
+            //Debug.Log("randomScene =" + randomScene);
 
         } while (randomScene == sceneCount);
 
         return (randomScene);
     }
-      
-     
-   
-          
-     
+
+    public void setting()
+    {
         
-    
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void Level_1()
+    {
+        SceneManager.LoadScene(1);
+    }
 
 
+    /*
+    public void Level_2()
+    {
+        SceneManager.LoadScene(2);
+    }
+
+    public void Level_3()
+    {
+        SceneManager.LoadScene(2);
+    }
+    */
+
+    public void Lose_Scene()
+    {
+        SceneManager.LoadScene("Lose");
+    }
+
+    public void Win_Scene()
+    {
+        SceneManager.LoadScene("Win");
+    }
+
+    public void RandomScene()
+    {
+        SceneManager.LoadScene(RandomNunber());
+    }
 }
