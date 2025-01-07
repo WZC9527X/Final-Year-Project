@@ -9752,7 +9752,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5883229129755864545}
   m_Layer: 0
-  m_Name: MapScene
+  m_Name: MapScene0.1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

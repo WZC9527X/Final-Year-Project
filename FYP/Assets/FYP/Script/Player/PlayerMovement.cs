@@ -13,9 +13,9 @@ public class PlayerMovement : MonoBehaviour
 
     public Camera playerCamera;
 
-    public float walkSpeed = 6f;
+    public float walkSpeed = 10f;
 
-    public float runSpeed = 12f;
+    public float runSpeed = 15f;
 
     public float jumpPower = 7f;
 
