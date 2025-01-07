@@ -13,6 +13,9 @@ public class SelectOJPanel : MonoBehaviour
 
     public Animator door;
     public bool openClose;
+    public int cleanblood;
+    public GameObject airwall;
+
     private void Start()
     {
     }
@@ -55,6 +58,11 @@ public class SelectOJPanel : MonoBehaviour
                 eKey.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    cleanblood += 1;
+                    if (cleanblood >= 3)
+                    {
+                       Destroy(airwall);
+                    }
                     print(selectOBJ);
                     Destroy(selectOBJ);
                 }
