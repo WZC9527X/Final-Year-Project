@@ -10,20 +10,21 @@ public class fadeOut : MonoBehaviour
     public PostProcessVolume _ppv;
 
     Vignette v_vignette;
-    public float s_value = 0f;
+    float s_value = 0f;
 
     private void Start()
     {
         _ppv.profile.TryGetSettings(out v_vignette);
 
-        v_vignette.smoothness.value = 0.2f;
+        v_vignette.smoothness.value = 0.01f;
 
 
     }
 
 
-    void Update()
+    private void OnTriggerStay(Collider other)
     {
+        
         if (v_vignette.smoothness.value >= 0.59f)
         {
             s_value = 0.2f;
@@ -33,7 +34,13 @@ public class fadeOut : MonoBehaviour
             s_value = 0.6f;
         }
 
-        v_vignette.smoothness.value = Mathf.Lerp(v_vignette.smoothness.value, s_value, 2f * Time.deltaTime);
-
+        v_vignette.smoothness.value = Mathf.Lerp(v_vignette.smoothness.value, s_value, 3f * Time.deltaTime);
+        
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        v_vignette.smoothness.value = 0.01f;
+    }
+
 }

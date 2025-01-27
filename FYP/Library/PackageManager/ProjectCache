@@ -3305,6 +3305,7 @@ m_ResolvedPackages:
     - 1.8.16
     - 1.8.17
     - 1.8.18
+    - 1.8.19
     compatible:
     - 1.8.12
     - 1.8.13
@@ -3313,7 +3314,8 @@ m_ResolvedPackages:
     - 1.8.16
     - 1.8.17
     - 1.8.18
-    recommended: 1.8.18
+    - 1.8.19
+    recommended: 1.8.19
     deprecated: []
   dependencies:
   - name: com.unity.mathematics
@@ -4654,9 +4656,11 @@ m_ResolvedPackages:
     - 4.7.0-preview
     - 4.9.1
     - 4.9.2
+    - 4.9.3
     compatible:
     - 4.9.2
-    recommended: 4.9.2
+    - 4.9.3
+    recommended: 4.9.3
     deprecated: []
   dependencies: []
   resolvedDependencies: []
