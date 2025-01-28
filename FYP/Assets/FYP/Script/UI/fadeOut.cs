@@ -2,23 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.HighDefinition;
 
 public class fadeOut : MonoBehaviour
 {
-
-    public PostProcessVolume _ppv;
+    
+    public Volume _ppv;
+    public float fadeInOut_Speed = 1f;
 
     Vignette v_vignette;
     float s_value = 0f;
 
     private void Start()
     {
-        _ppv.profile.TryGetSettings(out v_vignette);
+        _ppv.profile.TryGet(out v_vignette);
 
-        v_vignette.smoothness.value = 0.01f;
+        v_vignette.smoothness.value = 0.1f;
 
-
+       
     }
 
 
@@ -34,7 +36,7 @@ public class fadeOut : MonoBehaviour
             s_value = 0.6f;
         }
 
-        v_vignette.smoothness.value = Mathf.Lerp(v_vignette.smoothness.value, s_value, 3f * Time.deltaTime);
+        v_vignette.smoothness.value = Mathf.Lerp(v_vignette.smoothness.value, s_value, fadeInOut_Speed * Time.deltaTime);
         
     }
 
@@ -42,5 +44,5 @@ public class fadeOut : MonoBehaviour
     {
         v_vignette.smoothness.value = 0.01f;
     }
-
+   
 }
