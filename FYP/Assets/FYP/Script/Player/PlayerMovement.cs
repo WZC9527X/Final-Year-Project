@@ -31,20 +31,12 @@ public class PlayerMovement : MonoBehaviour
 
     public float crouchSpeed = 3f;
 
-    public HUD Hud;
-
-    public Inventory inventory;
-
-
 
     private Vector3 moveDirection = Vector3.zero;
 
     private float rotationX = 0;
 
     private CharacterController characterController;
-
-    private IInventoryItem mItemToPickup = null;
-
 
 
     private bool canMove = true;
@@ -81,13 +73,6 @@ public class PlayerMovement : MonoBehaviour
         float movementDirectionY = moveDirection.y;
 
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
-
-        if(mItemToPickup != null && Input.GetKeyDown(KeyCode.E))
-        {
-            inventory.AddItem(mItemToPickup);
-            mItemToPickup.OnPickup();
-        }
-
 
 
         if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
@@ -164,23 +149,5 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        IInventoryItem item = other.GetComponent<IInventoryItem>();
-        if (item != null)
-        {
-            inventory.AddItem(item);
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        IInventoryItem item = other.GetComponent<IInventoryItem>();
-        if (item != null)
-        {
-            mItemToPickup = null;
-        }
     }
 }

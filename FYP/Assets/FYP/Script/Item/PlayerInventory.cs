@@ -27,8 +27,8 @@ public class PlayerInventory : MonoBehaviour
 
     [Space(20)]
     [Header("UI")]
-    [SerializeField] Image[] inventorySlotImage = new Image[7];
-    [SerializeField] Image[] inventoryBackgroundImage = new Image[7];
+    [SerializeField] Image[] inventorySlotImage = new Image[6];
+    [SerializeField] Image[] inventoryBackgroundImage = new Image[6];
     [SerializeField] Sprite prazdnySlotImage;
 
 
@@ -91,7 +91,7 @@ public class PlayerInventory : MonoBehaviour
             NewItemSelected();
         }
 
-        for (int i = 0; i < 7; i++)
+        for (int i = 0; i < 6; i++)
         {
             if (i < inventoryList.Count)
             {
