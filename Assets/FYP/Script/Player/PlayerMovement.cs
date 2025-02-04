@@ -25,11 +25,15 @@ public class PlayerMovement : MonoBehaviour
 
     public float lookXLimit = 45f;
 
-    public float defaultHeight = 2f;
+    public float defaultHeight = 2.45f;
 
     public float crouchHeight = 1f;
 
     public float crouchSpeed = 3f;
+
+    public float StartwalkSpeed = 0;
+
+    public float StartrunSpeed = 0f;
 
 
     private Vector3 moveDirection = Vector3.zero;
@@ -48,8 +52,8 @@ public class PlayerMovement : MonoBehaviour
     {
 
         characterController = GetComponent<CharacterController>();
-
-
+        StartwalkSpeed = walkSpeed;
+        StartrunSpeed = runSpeed;
     }
 
 
@@ -103,7 +107,7 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-        if (Input.GetKey(KeyCode.R) && canMove)
+        if (Input.GetKey(KeyCode.LeftControl) && canMove)
 
         {
 
@@ -123,9 +127,9 @@ public class PlayerMovement : MonoBehaviour
 
             characterController.height = defaultHeight;
 
-            walkSpeed = 6f;
+            walkSpeed = StartwalkSpeed;
 
-            runSpeed = 12f;
+            runSpeed = StartrunSpeed;
 
         }
 
