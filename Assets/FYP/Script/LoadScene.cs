@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +9,8 @@ public class LoadScene : MonoBehaviour
     int randomScene;
     int sceneCount;
     GameManager mouseControl = new GameManager();
+    public float transitionTime = 1f;
+    public Animator transition;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -47,15 +50,15 @@ public class LoadScene : MonoBehaviour
         return (randomScene);
     }
 
-    public void startGameScenes()
+    public void StartGameScenes()
     {
-        SceneManager.LoadScene(0);
+        StartCoroutine(LoadLevel(0));
     }
 
     public void RestartGame()
     {
         int scene = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(scene);
+        StartCoroutine(LoadLevel(scene));
     }
 
     public void setting()
@@ -70,7 +73,9 @@ public class LoadScene : MonoBehaviour
 
     public void Level_1()
     {
-        SceneManager.LoadScene(1);
+        StartCoroutine(LoadLevel(1));
+
+
     }
 
 
@@ -88,16 +93,39 @@ public class LoadScene : MonoBehaviour
 
     public void Lose_Scene()
     {
-        SceneManager.LoadScene("Lose");
+        
+        StartCoroutine(LoadLevel(2));
     }
 
     public void Win_Scene()
     {
-        SceneManager.LoadScene("Win");
+        StartCoroutine(LoadLevel(3));
+        
     }
 
     public void RandomScene()
     {
-        SceneManager.LoadScene(RandomNunber());
+        StartCoroutine(LoadLevel(RandomNunber())); 
+        
     }
+
+
+
+    IEnumerator LoadLevel(int levelIndex)
+    {
+        transition.SetTrigger("LevelLoader_Start");
+        yield return new WaitForSeconds(1.5f);
+        
+        // <------add loading log
+        
+
+        //transition.SetTrigger("LevelLoader_End");
+        SceneManager.LoadScene(levelIndex);
+
+        //yield return new WaitForSeconds(1);
+
+    }
+    
+
+
 }

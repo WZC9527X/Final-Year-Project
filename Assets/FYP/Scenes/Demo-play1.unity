@@ -684,6 +684,75 @@ MonoBehaviour:
   m_PointlightHDType: 0
   m_SpotLightShape: 0
   m_AreaLightShape: 0
+--- !u!1001 &135094119
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3685176448368228551, guid: 0b397db3f98adce46b07067da401546b, type: 3}
+      propertyPath: m_Name
+      value: LevelLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868446406264992413, guid: 0b397db3f98adce46b07067da401546b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868446406264992413, guid: 0b397db3f98adce46b07067da401546b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868446406264992413, guid: 0b397db3f98adce46b07067da401546b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868446406264992413, guid: 0b397db3f98adce46b07067da401546b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868446406264992413, guid: 0b397db3f98adce46b07067da401546b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868446406264992413, guid: 0b397db3f98adce46b07067da401546b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868446406264992413, guid: 0b397db3f98adce46b07067da401546b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868446406264992413, guid: 0b397db3f98adce46b07067da401546b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868446406264992413, guid: 0b397db3f98adce46b07067da401546b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868446406264992413, guid: 0b397db3f98adce46b07067da401546b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7291484564471210305, guid: 0b397db3f98adce46b07067da401546b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7291484564471210305, guid: 0b397db3f98adce46b07067da401546b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7291484564471210305, guid: 0b397db3f98adce46b07067da401546b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0b397db3f98adce46b07067da401546b, type: 3}
 --- !u!1 &138191581
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,6 +932,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a25e177aa2ace5549aa1e2a8e1cc2586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transitionTime: 1
+  transition: {fileID: 0}
 --- !u!114 &138191589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1193,7 +1264,6 @@ GameObject:
   - component: {fileID: 318349608}
   - component: {fileID: 318349607}
   - component: {fileID: 318349606}
-  - component: {fileID: 318349605}
   m_Layer: 5
   m_Name: Restart_bt
   m_TagString: Untagged
@@ -1220,27 +1290,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 174, y: 181}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &318349605
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 318349603}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 19c7168d614f4324ab8b7e71324712d2, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!82 &318349606
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1381,18 +1430,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 318349605}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: ClickEffect
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 318349606}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
@@ -1405,7 +1442,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1413273022}
+      - m_Target: {fileID: 812572298}
         m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
         m_MethodName: RestartGame
         m_Mode: 1
@@ -3302,6 +3339,17 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 1
+--- !u!114 &812572298 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5417162950553750836, guid: 0b397db3f98adce46b07067da401546b, type: 3}
+  m_PrefabInstance: {fileID: 135094119}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a25e177aa2ace5549aa1e2a8e1cc2586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &822441339
 GameObject:
   m_ObjectHideFlags: 0
@@ -3617,7 +3665,6 @@ GameObject:
   - component: {fileID: 951335732}
   - component: {fileID: 951335731}
   - component: {fileID: 951335734}
-  - component: {fileID: 951335735}
   m_Layer: 5
   m_Name: home_bt
   m_TagString: Untagged
@@ -3688,18 +3735,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 951335735}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: ClickEffect
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 951335734}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
@@ -3712,9 +3747,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1413273022}
+      - m_Target: {fileID: 812572298}
         m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
-        m_MethodName: startGameScenes
+        m_MethodName: StartGameScenes
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3858,27 +3893,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &951335735
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 951335729}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 19c7168d614f4324ab8b7e71324712d2, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -4207,7 +4221,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &973208242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4876,7 +4890,6 @@ GameObject:
   - component: {fileID: 1245248638}
   - component: {fileID: 1245248637}
   - component: {fileID: 1245248640}
-  - component: {fileID: 1245248641}
   m_Layer: 5
   m_Name: close_bt
   m_TagString: Untagged
@@ -4947,7 +4960,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1245248641}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
         m_MethodName: SetTrigger
         m_Mode: 5
@@ -5117,27 +5130,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &1245248641
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1245248635}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 19c7168d614f4324ab8b7e71324712d2, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1270554281 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2274135672178385748, guid: 8b9fe96ca437fc849898f3a8276f5018, type: 3}
@@ -5273,9 +5265,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 291285523293287841, guid: 79dded02ef5d56f45b7ccaf84fb6bb43, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6476473133986818475, guid: 79dded02ef5d56f45b7ccaf84fb6bb43, type: 3}
       propertyPath: m_Name
       value: Hit
+      objectReference: {fileID: 0}
+    - target: {fileID: 6476473133986818475, guid: 79dded02ef5d56f45b7ccaf84fb6bb43, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8955085454219740182, guid: 79dded02ef5d56f45b7ccaf84fb6bb43, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5515,7 +5515,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1413273021}
   - component: {fileID: 1413273020}
-  - component: {fileID: 1413273022}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5551,18 +5550,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1413273022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1413273019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a25e177aa2ace5549aa1e2a8e1cc2586, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1420840057 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1082740604360175414, guid: e7f93659f7d919044b65c4f56af3e8f0, type: 3}
@@ -6331,7 +6318,6 @@ GameObject:
   - component: {fileID: 1709413725}
   - component: {fileID: 1709413724}
   - component: {fileID: 1709413727}
-  - component: {fileID: 1709413728}
   m_Layer: 5
   m_Name: Setting_bt
   m_TagString: Untagged
@@ -6402,21 +6388,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1709413728}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
+      - m_Target: {fileID: 1709413727}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: ClickEffect
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1709413727}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
+        m_MethodName: setting
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6560,27 +6546,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &1709413728
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1709413722}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 19c7168d614f4324ab8b7e71324712d2, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1729619136
 GameObject:
   m_ObjectHideFlags: 0
@@ -7476,6 +7441,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mop
       objectReference: {fileID: 0}
+    - target: {fileID: 7152302670117075900, guid: 7806a3e92b6c70140a64f814515cc956, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8247,3 +8216,4 @@ SceneRoots:
   - {fileID: 1923298362}
   - {fileID: 1948104410}
   - {fileID: 1299398059}
+  - {fileID: 135094119}
