@@ -19,6 +19,7 @@ public class PlayerInventory : MonoBehaviour
     [Header("Item gameobjects")]
     [SerializeField] GameObject mop_item;
     [SerializeField] GameObject hit_item;
+    [SerializeField] GameObject hand_item;
 
     [Space(20)]
     [Header("Item prefabs")]
@@ -44,6 +45,8 @@ public class PlayerInventory : MonoBehaviour
     {
         itemSetActive.Add(itemType.Mop, mop_item);
         itemSetActive.Add(itemType.Hit, hit_item);
+        itemSetActive.Add(itemType.Hand, hand_item);
+
 
         itemInstantiate.Add(itemType.Mop, mop_prefab);
         itemInstantiate.Add(itemType.Hit, hit_prefab);
@@ -132,9 +135,9 @@ public class PlayerInventory : MonoBehaviour
             NewItemSelected();
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha3) && inventoryList.Count > 0) //&& !animationIsPlaying)
+        if (Input.GetKeyDown(KeyCode.Alpha3) && inventoryList.Count > 2) //&& !animationIsPlaying)
         {
-            selectedItem = 0;
+            selectedItem = 2;
             NewItemSelected();
         }
 
