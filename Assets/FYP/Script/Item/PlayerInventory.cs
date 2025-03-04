@@ -8,6 +8,8 @@ public class PlayerInventory : MonoBehaviour
     public List<itemType> inventoryList;
     public int selectedItem;
     public int playerReach;
+    
+
     [SerializeField] GameObject throwItem_gameobject;
 
     [Space(20)]

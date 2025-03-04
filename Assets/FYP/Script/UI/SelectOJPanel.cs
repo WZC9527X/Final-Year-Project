@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class SelectOJPanel : MonoBehaviour
 {
+    public PlayerInventory playerInventory;
     public GameObject eKey;
     public TextMeshProUGUI selectOBJText;
     public static GameObject selectOBJ;
@@ -55,16 +56,26 @@ public class SelectOJPanel : MonoBehaviour
                 color.a = color.a - 0.25f;
                 spriteRenderer.color = color;
                 */
-                eKey.SetActive(true);
-                if (Input.GetKeyDown(KeyCode.E))
+                bool isHoldingMop = playerInventory.inventoryList.Count > 0 && playerInventory.inventoryList[playerInventory.selectedItem] == itemType.Mop;
+
+                if (isHoldingMop)
                 {
-                    cleanblood += 1;
-                    if (cleanblood >= 3)
+                    eKey.SetActive(true);
+
+                    if (Input.GetKeyDown(KeyCode.E))
                     {
-                       Destroy(airwall);
+                        cleanblood += 1;
+                        if (cleanblood >= 3)
+                        {
+                            Destroy(airwall);
+                        }
+                        print(selectOBJ);
+                        Destroy(selectOBJ);
                     }
-                    print(selectOBJ);
-                    Destroy(selectOBJ);
+                }
+                else
+                {
+                    eKey.SetActive(false);
                 }
             }
             else if (selectOBJ.tag == "door")
