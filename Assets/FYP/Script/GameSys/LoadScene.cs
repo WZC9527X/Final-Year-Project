@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Collections.Generic;
+using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,7 +8,6 @@ public class LoadScene : MonoBehaviour
 {
     int randomScene;
     int sceneCount;
-    GameManager mouseControl = new GameManager();
     public float transitionTime = 1f;
     public Animator transition;
 

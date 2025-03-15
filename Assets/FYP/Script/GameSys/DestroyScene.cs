@@ -9,7 +9,7 @@ public class DestroyScene : MonoBehaviour
 
         if (other.tag == "Player")
         {
-            Destroy(gameObject.transform.parent.parent.gameObject);
+            //Destroy(gameObject.transform.parent.parent.gameObject);
 
         }
 

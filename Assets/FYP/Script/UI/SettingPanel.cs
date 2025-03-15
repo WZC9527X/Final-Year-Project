@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CanvasGroup))]
-public class SettingPanel : MonoBehaviour
+public class SettingPanel : GameManager
 {
     public GameObject settingpPanel;
     private CanvasGroup canvasGroup;
-    GameManager mouseControl = new GameManager();
+    
 
     void Start()
     {
@@ -33,7 +33,7 @@ public class SettingPanel : MonoBehaviour
             settingpPanel.SetActive(true);
             canvasGroup.alpha = 0f;
             LeanTween.alphaCanvas(canvasGroup, 1f, 0.5f).setEaseInCubic();
-            mouseControl.MouseControl(true);
+            MouseControl(true);
         }
         else
         {
@@ -44,7 +44,8 @@ public class SettingPanel : MonoBehaviour
                 }
 
             );
-            mouseControl.MouseControl(false);
+            MouseControl(false);
+            
 
         }
         
