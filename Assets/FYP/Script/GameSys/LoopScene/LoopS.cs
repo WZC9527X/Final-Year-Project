@@ -8,36 +8,27 @@ public class LoopS : LoopScene
     public GameObject nextScenePrefab;
     public int nextSpawnPoint = 20;
     public Vector3 spawnPoint;
-    public float[] _vPosition;
+    GameObject[] _allScene;
+
 
     private void OnTriggerEnter(Collider other)
     {
-
+        //Debug.Log("==========test==========");
         if (other.tag == "Player")
         {
             spawnPoint = gameObject.transform.parent.parent.position;
             //Debug.Log(gameObject.transform.parent.parent);
 
-            GameObject[] _allScene = GameObject.FindGameObjectsWithTag("Scene");
-
-            _vPosition = new float[_allScene.Length];
-
-            for (int i = 0; i < _allScene.Length; i++)
-            {
-                //Debug.Log(_allScene[i]);
-                //Debug.Log(_allScene.Length);
-                //Debug.Log(i);
-                _vPosition[i] = _allScene[i].transform.position.y;
-            }
-
+            _allScene = GameObject.FindGameObjectsWithTag("Scene");
             spawnPoint.y += nextSpawnPoint;
 
             if (VSPosition())
             {
                 
-                GameObject sceneOBJ_UP = Instantiate(nextScenePrefab, spawnPoint, Quaternion.identity);
+                GameObject sceneOBJ = Instantiate(nextScenePrefab, spawnPoint, Quaternion.identity);
                 //sceneCount.Enqueue(sceneOBJ_UP);
                 //gameObject.SetActive(false);
+                //Debug.Log("spawnPoint: " + sceneOBJ.transform.position + " Scene name: " + sceneOBJ.name);
 
             }
 
@@ -45,10 +36,11 @@ public class LoopS : LoopScene
             
             if (VSPosition())
             {
-
-                GameObject sceneOBJ_UP = Instantiate(nextScenePrefab, spawnPoint, Quaternion.identity);
+                GameObject sceneOBJ = Instantiate(nextScenePrefab, spawnPoint, Quaternion.identity);
                 //sceneCount.Enqueue(sceneOBJ_UP);
                 //gameObject.SetActive(false);
+                //Debug.Log("spawnPoint: " + sceneOBJ.transform.position + " Scene name: " + sceneOBJ.name);
+
             }
 
 
@@ -77,10 +69,14 @@ public class LoopS : LoopScene
     public bool VSPosition()
     {
         bool cheakSceneUP = true;
-        for (int i = 0; i < _vPosition.Length - 1; i++)
+        //Debug.Log("_allScene.Length: " + _allScene.Length);
+
+        for (int i = 0; i < _allScene.Length; i++)
         {
-            if (_vPosition[i] == spawnPoint.y)
+            //Debug.Log(i + ": " +  _allScene[i].name + " position: " + _allScene[i].transform.position + " spawnPoint: " + spawnPoint.y);
+            if (_allScene[i].transform.position.y == spawnPoint.y)
             {
+                //Debug.Log("y");
                 cheakSceneUP = false;
             }
         }
