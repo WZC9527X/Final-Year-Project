@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.HighDefinition;
@@ -26,18 +23,19 @@ public class fadeOut : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        
-        if (v_vignette.smoothness.value >= 0.59f)
+        if (other.tag == "Player")
         {
-            s_value = 0.2f;
+            if (v_vignette.smoothness.value >= 0.59f)
+            {
+                s_value = 0.2f;
+            }
+            if (v_vignette.smoothness.value <= 0.21f)
+            {
+                s_value = 0.6f;
+            }
+            v_vignette.smoothness.value = Mathf.Lerp(v_vignette.smoothness.value, s_value, fadeInOut_Speed * Time.deltaTime);
         }
-        if (v_vignette.smoothness.value <= 0.21f)
-        {
-            s_value = 0.6f;
-        }
-
-        v_vignette.smoothness.value = Mathf.Lerp(v_vignette.smoothness.value, s_value, fadeInOut_Speed * Time.deltaTime);
-        
+     
     }
 
     private void OnTriggerExit(Collider other)
