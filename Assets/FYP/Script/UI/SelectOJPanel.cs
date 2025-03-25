@@ -9,6 +9,7 @@ public class SelectOJPanel : MonoBehaviour
 {
     public PlayerInventory playerInventory;
     public GameObject eKey;
+    public GameObject AirwallText;
     public TextMeshProUGUI selectOBJText;
     public static GameObject selectOBJ;
 
@@ -105,11 +106,21 @@ public class SelectOJPanel : MonoBehaviour
                 eKey.SetActive(false);
 
             }
+            if (selectOBJ.tag == "Airwall")
+            {
+                AirwallText.SetActive(true);
+            }
+            else
+            {
+                AirwallText.SetActive(false);
+
+            }
         }
         else
         {
             eKey.SetActive(false);
         }
+
 
 
             

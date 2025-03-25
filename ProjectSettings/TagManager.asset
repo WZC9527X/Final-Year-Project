@@ -9,6 +9,7 @@ TagManager:
   - blood
   - mop
   - Scene
+  - Airwall
   layers:
   - Default
   - TransparentFX
