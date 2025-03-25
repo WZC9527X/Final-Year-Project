@@ -6,8 +6,6 @@ public class LoadScene : MonoBehaviour
 {
     int randomScene;
     int sceneCount;
-    public float transitionTime = 1f;
-    public Animator transition;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -30,8 +28,8 @@ public class LoadScene : MonoBehaviour
        // mouseControl.MouseControl(true);
 
     }
+    
 
- 
     private int RandomNunber()
     {
         sceneCount = SceneManager.sceneCount;
@@ -49,13 +47,16 @@ public class LoadScene : MonoBehaviour
 
     public void StartGameScenes()
     {
-        StartCoroutine(LoadLevel(0));
+
+        StartCoroutine(LevelLoaderEffect.LoadLevel(0));
+
     }
 
     public void RestartGame()
     {
         int scene = SceneManager.GetActiveScene().buildIndex;
-        StartCoroutine(LoadLevel(scene));
+        StartCoroutine(LevelLoaderEffect.LoadLevel(scene));
+
     }
 
     public void setting()
@@ -70,8 +71,8 @@ public class LoadScene : MonoBehaviour
 
     public void Level_1()
     {
-        StartCoroutine(LoadLevel(1));
-
+        StartCoroutine(LevelLoaderEffect.LoadLevel(1));
+     
 
     }
 
@@ -91,38 +92,17 @@ public class LoadScene : MonoBehaviour
     public void Lose_Scene()
     {
         
-        StartCoroutine(LoadLevel(2));
+        StartCoroutine(LevelLoaderEffect.LoadLevel(2));
     }
 
     public void Win_Scene()
     {
-        StartCoroutine(LoadLevel(3));
-        
+        StartCoroutine(LevelLoaderEffect.LoadLevel(3));
     }
 
     public void RandomScene()
     {
-        StartCoroutine(LoadLevel(RandomNunber())); 
-        
-    }
-
-
-
-    IEnumerator LoadLevel(int levelIndex)
-    {
-        transition.SetTrigger("LevelLoader_Start");
-        yield return new WaitForSeconds(1.5f);
-        
-        // <------add loading log
-        
-
-        //transition.SetTrigger("LevelLoader_End");
-        SceneManager.LoadScene(levelIndex);
-
-        //yield return new WaitForSeconds(1);
-
+        StartCoroutine(LevelLoaderEffect.LoadLevel(RandomNunber()));
     }
     
-
-
 }

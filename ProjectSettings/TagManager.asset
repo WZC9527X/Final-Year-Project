@@ -10,6 +10,7 @@ TagManager:
   - mop
   - Scene
   - Airwall
+  - GameManager
   layers:
   - Default
   - TransparentFX

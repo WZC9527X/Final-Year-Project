@@ -3,16 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class LoopS : LoopScene
-{  
-    public GameObject nextScenePrefab;
+public class LoopS : MonoBehaviour
+{
+   
+    //public GameObject nextScenePrefab;  //test
     public int nextSpawnPoint = 20;
-    public Vector3 spawnPoint;
-    GameObject[] _allScene;
+    private Vector3 spawnPoint;
+    private GameObject[] _allScene;
+    private LoopScene _csLoopScene;
 
+    private void Start()
+    {
+
+        _csLoopScene = GameObject.FindGameObjectWithTag("GameManager").GetComponent<LoopScene>();
+
+        //Debug.Log("LoopS s: " + _csLoopScene._allScenePrefab.Length);
+
+    }
 
     private void OnTriggerEnter(Collider other)
     {
+
         //Debug.Log("==========test==========");
         if (other.tag == "Player")
         {
@@ -24,19 +35,26 @@ public class LoopS : LoopScene
 
             if (VSPosition())
             {
-                
-                GameObject sceneOBJ = Instantiate(nextScenePrefab, spawnPoint, Quaternion.identity);
+                _csLoopScene.NextLevel();
+
+                GameObject sceneOBJ = Instantiate(_csLoopScene._allScenePrefab[LoopScene._LevelCount - 1], spawnPoint, Quaternion.identity);
+
+                //GameObject sceneOBJ = Instantiate(nextScenePrefab, spawnPoint, Quaternion.identity);
+
                 //sceneCount.Enqueue(sceneOBJ_UP);
                 //gameObject.SetActive(false);
                 //Debug.Log("spawnPoint: " + sceneOBJ.transform.position + " Scene name: " + sceneOBJ.name);
 
             }
 
+
             spawnPoint.y -= nextSpawnPoint + nextSpawnPoint;
             
             if (VSPosition())
             {
-                GameObject sceneOBJ = Instantiate(nextScenePrefab, spawnPoint, Quaternion.identity);
+                _csLoopScene.NextLevel();
+
+                GameObject sceneOBJ = Instantiate(_csLoopScene._allScenePrefab[LoopScene._LevelCount - 1], spawnPoint, Quaternion.identity);
                 //sceneCount.Enqueue(sceneOBJ_UP);
                 //gameObject.SetActive(false);
                 //Debug.Log("spawnPoint: " + sceneOBJ.transform.position + " Scene name: " + sceneOBJ.name);

@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: a771de7ac57545348a241f3e461c82eb
+guid: 0618fc5a1788b084085c30f1569557a3
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - _allScenePrefab: {fileID: 8345341424319407558, guid: d82c49f4f0181dc42a7ed1c6cd4b9dc4, type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

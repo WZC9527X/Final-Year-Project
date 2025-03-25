@@ -9,7 +9,7 @@ public class SelectOJPanel : MonoBehaviour
 {
     public PlayerInventory playerInventory;
     public GameObject eKey;
-    public GameObject AirwallText;
+    //public GameObject AirwallText;
     public TextMeshProUGUI selectOBJText;
     public static GameObject selectOBJ;
 
@@ -17,6 +17,7 @@ public class SelectOJPanel : MonoBehaviour
     public bool openClose;
     public int cleanblood;
     public GameObject airwall;
+    public static bool _isCleanblood;
 
     private void Start()
     {
@@ -24,10 +25,6 @@ public class SelectOJPanel : MonoBehaviour
 
     void Update()
     {
-
-        
-
-
         // itemPickup();
         DisplayOJ();
         SelectOBJ();
@@ -68,6 +65,7 @@ public class SelectOJPanel : MonoBehaviour
                         cleanblood += 1;
                         if (cleanblood >= 3)
                         {
+                            _isCleanblood = true;
                             Destroy(airwall);
                         }
                         print(selectOBJ);
@@ -106,21 +104,20 @@ public class SelectOJPanel : MonoBehaviour
                 eKey.SetActive(false);
 
             }
-            if (selectOBJ.tag == "Airwall")
-            {
-                AirwallText.SetActive(true);
-            }
-            else
-            {
-                AirwallText.SetActive(false);
+            //if (selectOBJ.tag == "Airwall")
+            //{
+            //    AirwallText.SetActive(true);
+            //}
+            //else
+            //{
+            //    AirwallText.SetActive(false);
 
-            }
+            //}
         }
         else
         {
             eKey.SetActive(false);
         }
-
 
 
             
