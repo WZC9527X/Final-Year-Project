@@ -16577,6 +16577,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &841789861 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4650630720667567571, guid: b2aa780484afd024384a459eb0017d6a, type: 3}
+  m_PrefabInstance: {fileID: 1612938907}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &843966780
 Mesh:
   m_ObjectHideFlags: 0
@@ -21072,7 +21077,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Toilet:
-  - {fileID: 0}
+  - {fileID: 841789861}
   spawnPosition: {x: 14.39, y: -0.354, z: 37.16}
 --- !u!43 &1219576271
 Mesh:
