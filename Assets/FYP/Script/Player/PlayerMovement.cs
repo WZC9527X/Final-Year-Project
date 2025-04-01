@@ -154,4 +154,24 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
+
+    public void DisableMovement()
+    {
+        canMove = false;
+    }
+
+    public void EnableMovement()
+    {
+        canMove = true;
+    }
+
+    public void LockCamera()
+    {
+        playerCamera.transform.rotation = Quaternion.Euler(0, 90, 0);
+    }
+
+    public void UnlockCamera()
+    {
+
+    }
 }
