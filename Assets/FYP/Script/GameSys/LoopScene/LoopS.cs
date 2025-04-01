@@ -1,20 +1,22 @@
+using UnityEditor;
 using UnityEngine;
 
 
-public class LoopS : MonoBehaviour
+public class LoopS : CheckScene
 {
    
     //public GameObject nextScenePrefab;  //test
     public int nextSpawnPoint = 20;
     private Vector3 spawnPoint;
-    private GameObject[] _allScene;
-    private LoopScene _csLoopScene;
+    private LoopScene _LoopScene;
+    //public static GameObject[] sceneOBJ1;
+    //public static GameObject[] sceneOBJ2;
 
     private void Start()
     {
 
-        _csLoopScene = GameObject.FindGameObjectWithTag("GameManager").GetComponent<LoopScene>();
-
+        _LoopScene = GameObject.FindGameObjectWithTag("GameManager").GetComponent<LoopScene>();
+        
         //Debug.Log("LoopS s: " + _csLoopScene._allScenePrefab.Length);
 
     }
@@ -28,14 +30,13 @@ public class LoopS : MonoBehaviour
             spawnPoint = gameObject.transform.parent.parent.position;
             //Debug.Log(gameObject.transform.parent.parent);
 
-            _allScene = GameObject.FindGameObjectsWithTag("Scene");
+            _LoopScene.NextLevel();
+
             spawnPoint.y += nextSpawnPoint;
-
-            if (VSPosition())
+            if (VSPosition(spawnPoint.y))
             {
-                _csLoopScene.NextLevel();
-
-                GameObject sceneOBJ = Instantiate(_csLoopScene._allScenePrefab[LoopScene._LevelCount - 1], spawnPoint, Quaternion.identity);
+                Instantiate(_LoopScene._allScenePrefab[LoopScene._LevelCount - 1], spawnPoint, Quaternion.identity);
+                //sceneOBJ1[LoopScene._LevelCount] = Instantiate(_LoopScene._allScenePrefab[LoopScene._LevelCount - 1], spawnPoint, Quaternion.identity);
 
                 //GameObject sceneOBJ = Instantiate(nextScenePrefab, spawnPoint, Quaternion.identity);
 
@@ -45,14 +46,14 @@ public class LoopS : MonoBehaviour
 
             }
 
+            _LoopScene.NextLevel();
 
             spawnPoint.y -= nextSpawnPoint + nextSpawnPoint;
-            
-            if (VSPosition())
+            if (VSPosition(spawnPoint.y))
             {
-                _csLoopScene.NextLevel();
-
-                GameObject sceneOBJ = Instantiate(_csLoopScene._allScenePrefab[LoopScene._LevelCount - 1], spawnPoint, Quaternion.identity);
+                Instantiate(_LoopScene._allScenePrefab[LoopScene._LevelCount - 1], spawnPoint, Quaternion.identity);
+                //sceneOBJ2[LoopScene._LevelCount] = Instantiate(_LoopScene._allScenePrefab[LoopScene._LevelCount - 1], spawnPoint, Quaternion.identity);
+                
                 //sceneCount.Enqueue(sceneOBJ_UP);
                 //gameObject.SetActive(false);
                 //Debug.Log("spawnPoint: " + sceneOBJ.transform.position + " Scene name: " + sceneOBJ.name);
@@ -82,20 +83,5 @@ public class LoopS : MonoBehaviour
         }
     }
 
-    public bool VSPosition()
-    {
-        bool cheakSceneUP = true;
-        //Debug.Log("_allScene.Length: " + _allScene.Length);
 
-        for (int i = 0; i < _allScene.Length; i++)
-        {
-            //Debug.Log(i + ": " +  _allScene[i].name + " position: " + _allScene[i].transform.position + " spawnPoint: " + spawnPoint.y);
-            if (_allScene[i].transform.position.y == spawnPoint.y)
-            {
-                //Debug.Log("y");
-                cheakSceneUP = false;
-            }
-        }
-        return cheakSceneUP;
-    }
 }

@@ -6,11 +6,10 @@ public class LoopScene : MonoBehaviour
     public GameObject[] _allScenePrefab;
     public static int _LevelCount = 1;
 
-    //public static bool _isWin;
+
     public void NextLevel()
     {
-
-        if(_LevelCount == 1)
+        if (_LevelCount == 1)
         {
             Level_1();
             Debug.Log("_LevelCount: " + _LevelCount);
@@ -36,19 +35,34 @@ public class LoopScene : MonoBehaviour
         
     }
 
+    public void LevelCount()
+    {
+        _LevelCount++;
+        
+    }
+
     public void Level_1()
     {
         if (SelectOJPanel._isCleanblood)
         {
             Debug.Log("The blood is cleared to enter the 2 level.");
 
-            _LevelCount++;
-            
+            LevelCount();
+
         }
         Debug.Log("unconditional");
      
     }
 
+    public void Level_2()
+    {
+
+    }
+
+    public void Level_3()
+    {
+
+    }
 
 
 
