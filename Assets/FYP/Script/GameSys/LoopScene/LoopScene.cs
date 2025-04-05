@@ -4,9 +4,13 @@ public class LoopScene : MonoBehaviour
 {
     //public static Queue<GameObject> sceneCount = new Queue<GameObject>();
     public GameObject[] _allScenePrefab;
+    //public static GameObject[] allScenePrefab;
     public static int _LevelCount = 1;
 
-
+    private void Start()
+    {
+        //allScenePrefab = _allScenePrefab;
+    }
     public void NextLevel()
     {
         if (_LevelCount == 1)
@@ -50,7 +54,7 @@ public class LoopScene : MonoBehaviour
             LevelCount();
 
         }
-        Debug.Log("unconditional");
+        //Debug.Log("unconditional");
      
     }
 

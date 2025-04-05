@@ -63,7 +63,7 @@ public class SelectOJPanel : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         cleanblood += 1;
-                        if (cleanblood >= 3)
+                        if (cleanblood >= 1)
                         {
                             _isCleanblood = true;
                             Destroy(airwall);
