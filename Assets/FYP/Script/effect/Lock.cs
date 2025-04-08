@@ -39,7 +39,6 @@ public class Lock : MonoBehaviour
         //PlayerMovement.LockCamera();
 
         yield return new WaitForSeconds(7.5f);
-
         yield return StartCoroutine(FadeToBlack(0f));
 
         PlayerMovement.EnableMovement();
