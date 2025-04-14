@@ -22,8 +22,7 @@ public class RayDetection : MonoBehaviour
             Debug.DrawRay(ray.origin, hit.transform.position, Color.red);
 
             //Debug.Log(hit.transform.gameObject);
-            //准星選取物體
-            //Debug.Log("當前准星選取物體:" + hit.transform.gameObject.name);
+            //Debug.Log(hit.transform.gameObject.name);
             
             
             SelectOJPanel.selectOBJ = hit.transform.gameObject;
