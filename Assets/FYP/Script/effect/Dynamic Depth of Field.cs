@@ -12,15 +12,14 @@ public class DynamicDepthofField : MonoBehaviour
     float hitDistance;
 
     public Volume _volume;
+    public float focusSpeed;
     DepthOfField doff;
 
-    // Start is called before the first frame update
     void Start()
     {
         _volume.profile.TryGet(out doff);
     }
 
-    // Update is called once per frame
     void Update()
     {
         raycast = new Ray(transform.position, transform.forward * 100);
@@ -31,7 +30,7 @@ public class DynamicDepthofField : MonoBehaviour
         {
             ishit = true;
             hitDistance = Vector3.Distance(transform.position, hit.point)/5;
-            Debug.Log("Hit");
+            //Debug.Log("Hit");
         }
         else
         {
@@ -45,19 +44,19 @@ public class DynamicDepthofField : MonoBehaviour
 
     void SetFocus()
     {
-        if (hitDistance <= 1.2f)
+        if (hitDistance <= 1.5f)
         {
-            hitDistance = 1.3f;
+            hitDistance = 1.51f;
         }
-        doff.focusDistance.value = Mathf.Lerp(doff.focusDistance.value, hitDistance, Time.deltaTime * 4f);
-        //Debug.Log("hitDistance: " + hitDistance);
-        //Debug.Log(doff.focusDistance.value);
+        doff.focusDistance.value = Mathf.Lerp(doff.focusDistance.value, hitDistance, Time.deltaTime * focusSpeed);
+        Debug.Log("hitDistance: " + hitDistance);
+        Debug.Log(doff.focusDistance.value);
 
     }
 
     private void OnDrawGizmos()
     {
-        
+        Gizmos.color = Color.red;
         if (ishit)
         {
             //Debug.Log(hit.point);
