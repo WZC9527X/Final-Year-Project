@@ -3228,7 +3228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 963194227}
   walkSpeed: 8
-  runSpeed: 12
+  runSpeed: 20
   jumpPower: 7
   gravity: 20
   lookSpeed: 2
@@ -3464,7 +3464,7 @@ AudioSource:
   m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ef62144d7ddfea446ab8bd8aab700c3e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 62711788f76ddf54ca6d4b845c30a083, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -3560,7 +3560,7 @@ AudioSource:
   m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 218407edb99f0b2469dde06252f00068, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f47be65540f561a43963b9d407a70545, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
