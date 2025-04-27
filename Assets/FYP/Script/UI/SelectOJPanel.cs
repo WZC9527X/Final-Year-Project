@@ -7,14 +7,16 @@ using UnityEngine;
 
 public class SelectOJPanel : MonoBehaviour
 {
+    private bool isDoorOpened = false;
+    private bool firstTimeOpening = true;
     public PlayerInventory playerInventory;
     public GameObject eKey;
     //public GameObject AirwallText;
     public TextMeshProUGUI selectOBJText;
     public static GameObject selectOBJ;
 
-    public Animator door;
-    public bool openClose;
+    //public Animator door;
+    //public bool openClose;
     public static int cleanBlood;
 
     void Update()
@@ -68,30 +70,17 @@ public class SelectOJPanel : MonoBehaviour
             }
             else if (selectOBJ.tag == "door")
             {
-                door = selectOBJ.GetComponent<Animator>();
+                DoorController doorController = selectOBJ.GetComponent<DoorController>();
 
-                openClose = door.GetBool("open-close");
-
-                eKey.SetActive(true);
-                if (Input.GetKeyDown(KeyCode.E))
+                if (doorController != null)
                 {
-                    if (openClose)
-                    {
-                        door.SetBool("open-close", false);
-                        
+                    eKey.SetActive(true);
 
-                    }
-                    else
+                    if (Input.GetKeyDown(KeyCode.E))
                     {
-                        door.SetBool("open-close", true);
+                        doorController.Interact(playerInventory);
                     }
-
                 }
-            }
-            else
-            {
-                eKey.SetActive(false);
-
             }
             //if (selectOBJ.tag == "Airwall")
             //{
