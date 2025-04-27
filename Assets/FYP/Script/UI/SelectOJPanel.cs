@@ -7,16 +7,12 @@ using UnityEngine;
 
 public class SelectOJPanel : MonoBehaviour
 {
-    private bool isDoorOpened = false;
-    private bool firstTimeOpening = true;
     public PlayerInventory playerInventory;
     public GameObject eKey;
     //public GameObject AirwallText;
     public TextMeshProUGUI selectOBJText;
     public static GameObject selectOBJ;
 
-    //public Animator door;
-    //public bool openClose;
     public static int cleanBlood;
 
     void Update()
@@ -70,17 +66,33 @@ public class SelectOJPanel : MonoBehaviour
             }
             else if (selectOBJ.tag == "door")
             {
-                DoorController doorController = selectOBJ.GetComponent<DoorController>();
-
-                if (doorController != null)
+                if (selectOBJ.GetComponent<isLock>() != null)
                 {
-                    eKey.SetActive(true);
-
-                    if (Input.GetKeyDown(KeyCode.E))
+                    if(playerInventory.inventoryList.Count > 0 && playerInventory.inventoryList[playerInventory.selectedItem] == itemType.Key)
                     {
-                        doorController.Interact(playerInventory);
+                        openDoor();
                     }
+                    else
+                    {
+                        eKey.SetActive(false);
+                    }
+                    //Detecting the presence of a key?
+                    //if (key)
+                    //{
+                    //    openDoor();
+                    //}
+                    
                 }
+                else
+                {
+                    openDoor();
+                }
+
+            }
+            else
+            {
+                eKey.SetActive(false);
+
             }
             //if (selectOBJ.tag == "Airwall")
             //{
@@ -119,4 +131,23 @@ public class SelectOJPanel : MonoBehaviour
         
     }
 
+    void openDoor()
+    {
+        Animator door = selectOBJ.GetComponent<Animator>();
+        bool openClose = door.GetBool("open-close");
+
+        eKey.SetActive(true);
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (openClose)
+            {
+                door.SetBool("open-close", false);
+            }
+            else
+            {
+                door.SetBool("open-close", true);
+            }
+
+        }
+    }
 }
