@@ -47,7 +47,7 @@ public class LoopScene : MonoBehaviour
 
     public void Level_1()
     {
-        if (SelectOJPanel._isCleanblood)
+        if (SelectOJPanel.cleanBlood >= 3)
         {
             Debug.Log("The blood is cleared to enter the 2 level.");
 

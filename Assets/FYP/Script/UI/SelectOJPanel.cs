@@ -15,13 +15,7 @@ public class SelectOJPanel : MonoBehaviour
 
     public Animator door;
     public bool openClose;
-    public int cleanblood;
-    public GameObject airwall;
-    public static bool _isCleanblood;
-
-    private void Start()
-    {
-    }
+    public static int cleanBlood;
 
     void Update()
     {
@@ -62,12 +56,7 @@ public class SelectOJPanel : MonoBehaviour
 
                     if (Input.GetKeyDown(KeyCode.E))
                     {
-                        cleanblood += 1;
-                        if (cleanblood >= 1)
-                        {
-                            _isCleanblood = true;
-                            Destroy(airwall);
-                        }
+                        cleanBlood += 1;
                         print(selectOBJ);
                         Destroy(selectOBJ);
                     }

@@ -13,4 +13,4 @@ public class ItemSO : ScriptableObject
 
 }
 
-public enum itemType { Mop, Hand, Hit };
+public enum itemType { Mop, Hand, Hit, key};
