@@ -7,11 +7,13 @@ using UnityEngine;
 
 public class SelectOJPanel : MonoBehaviour
 {
+    private bool isDoorOpen = false;
     public PlayerInventory playerInventory;
     public GameObject eKey;
     //public GameObject AirwallText;
     public TextMeshProUGUI selectOBJText;
     public static GameObject selectOBJ;
+    public string specificDoorID = "LockDoor";
 
     public static int cleanBlood;
 
@@ -64,51 +66,32 @@ public class SelectOJPanel : MonoBehaviour
                     eKey.SetActive(false);
                 }
             }
-            else if (selectOBJ.tag == "door")
+            else if (selectOBJ.CompareTag("door"))
             {
-                if (selectOBJ.GetComponent<isLock>() != null)
+                DoorController doorController = selectOBJ.GetComponent<DoorController>();
+                if (doorController != null)
                 {
-                    if(playerInventory.inventoryList.Count > 0 && playerInventory.inventoryList[playerInventory.selectedItem] == itemType.Key)
+                    eKey.SetActive(true);
+
+                    if (Input.GetKeyDown(KeyCode.E))
                     {
-                        openDoor();
+                        doorController.Interact(playerInventory);
                     }
-                    else
-                    {
-                        eKey.SetActive(false);
-                    }
-                    //Detecting the presence of a key?
-                    //if (key)
-                    //{
-                    //    openDoor();
-                    //}
-                    
                 }
                 else
                 {
-                    openDoor();
+                    eKey.SetActive(false);
                 }
-
             }
             else
             {
                 eKey.SetActive(false);
-
             }
-            //if (selectOBJ.tag == "Airwall")
-            //{
-            //    AirwallText.SetActive(true);
-            //}
-            //else
-            //{
-            //    AirwallText.SetActive(false);
-
-            //}
         }
         else
         {
             eKey.SetActive(false);
         }
-
 
             
         
@@ -131,7 +114,7 @@ public class SelectOJPanel : MonoBehaviour
         
     }
 
-    void openDoor()
+    /*void openDoor()
     {
         Animator door = selectOBJ.GetComponent<Animator>();
         bool openClose = door.GetBool("open-close");
@@ -139,15 +122,28 @@ public class SelectOJPanel : MonoBehaviour
         eKey.SetActive(true);
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (openClose)
+            if (!isDoorOpen)
             {
-                door.SetBool("open-close", false);
-            }
-            else
-            {
-                door.SetBool("open-close", true);
-            }
+                if (openClose)
+                {
+                    door.SetBool("open-close", false);
+                }
+                else
+                {
+                    
+                    if (playerInventory.inventoryList.Count > 0 && playerInventory.inventoryList[playerInventory.selectedItem] == itemType.Key)
+                    {
+                        
+                        door.SetBool("open-close", true);
+                        isDoorOpen = true;
 
+                        
+                        playerInventory.inventoryList.RemoveAt(playerInventory.selectedItem);
+                        playerInventory.selectedItem = 0;
+                    }
+                }
+            }
         }
     }
+    */
 }

@@ -5,6 +5,8 @@ public class DoorController : MonoBehaviour
     private bool isDoorOpened = false;
     private bool firstTimeOpening = true;
     public Animator doorAnimator;
+    public bool requiresKey = false;
+    public string doorID;
 
     public void Interact(PlayerInventory playerInventory)
     {
@@ -12,19 +14,24 @@ public class DoorController : MonoBehaviour
 
         if (!isDoorOpened)
         {
-            if (firstTimeOpening)
+            if (firstTimeOpening && requiresKey)
             {
                 if (isHoldingKey)
                 {
                     doorAnimator.SetBool("open-close", true);
                     isDoorOpened = true;
                     firstTimeOpening = false;
+
+                    
+                    playerInventory.inventoryList.RemoveAt(playerInventory.selectedItem);
+                    playerInventory.selectedItem = 0;
                 }
             }
             else
             {
                 doorAnimator.SetBool("open-close", true);
                 isDoorOpened = true;
+                firstTimeOpening = false;
             }
         }
         else
