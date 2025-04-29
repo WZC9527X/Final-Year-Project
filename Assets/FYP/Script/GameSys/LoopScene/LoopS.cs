@@ -27,7 +27,6 @@ public class LoopS : CheckScene
         //Debug.Log("==========test==========");
         if (other.tag == "Player")
         {
-
             sceneP = gameObject.transform.parent.parent.gameObject;
             spawnPoint = sceneP.transform.position;
             allScene = GameObject.FindGameObjectsWithTag("Scene");
@@ -87,6 +86,11 @@ public class LoopS : CheckScene
         if (sceneOBJ.GetComponent<Level_3>() != null)
         {
             level = 3;
+        }
+        else
+        if (sceneOBJ.GetComponent<Level_3>() != null)
+        {
+            level = 4;
         }
         else
         {

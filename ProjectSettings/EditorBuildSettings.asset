@@ -17,4 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/FYP/Scenes/Win.unity
     guid: 6b9db1d0b1657734bb37f1b9c0d103da
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 67adac98ca47531499b35bd679a73b36, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: bd3ef99bdf8b27c49b00bfe5b579af8d, type: 2}
