@@ -52880,6 +52880,14 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 527054923}
+    - target: {fileID: 7895401706535840950, guid: b2aa780484afd024384a459eb0017d6a, type: 3}
+      propertyPath: doorID
+      value: LockDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 7895401706535840950, guid: b2aa780484afd024384a459eb0017d6a, type: 3}
+      propertyPath: requiresKey
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7927566406004977667, guid: b2aa780484afd024384a459eb0017d6a, type: 3}
       propertyPath: m_Mesh
       value: 
