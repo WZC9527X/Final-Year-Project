@@ -69,7 +69,6 @@ public class LoopScene : MonoBehaviour
             LevelCount();
             SelectOJPanel.cleanBlood = 0;
         }
-        LevelCount();
     }
 
     public void Level_3()
