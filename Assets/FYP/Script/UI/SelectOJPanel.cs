@@ -13,9 +13,15 @@ public class SelectOJPanel : MonoBehaviour
     //public GameObject AirwallText;
     public TextMeshProUGUI selectOBJText;
     public static GameObject selectOBJ;
+    public GameObject Not_Key;
     public string specificDoorID = "LockDoor";
 
     public static int cleanBlood;
+
+    void Start()
+    {
+        Not_Key.SetActive(false);
+    }
 
     void Update()
     {
@@ -72,15 +78,11 @@ public class SelectOJPanel : MonoBehaviour
                 if (doorController != null)
                 {
                     eKey.SetActive(true);
-
+                    // 不再在这里处理提示的显示和隐藏
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         doorController.Interact(playerInventory);
                     }
-                }
-                else
-                {
-                    eKey.SetActive(false);
                 }
             }
             else
@@ -114,6 +116,11 @@ public class SelectOJPanel : MonoBehaviour
         
     }
 
+    private IEnumerator HideNotKeyAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Not_Key.SetActive(false);
+    }
     /*void openDoor()
     {
         Animator door = selectOBJ.GetComponent<Animator>();

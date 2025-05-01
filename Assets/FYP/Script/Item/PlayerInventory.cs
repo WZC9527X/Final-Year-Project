@@ -38,7 +38,7 @@ public class PlayerInventory : MonoBehaviour
 
 
     [SerializeField] Camera cam;
-    [SerializeField] GameObject pressToPickup_gameobject;
+    [SerializeField] GameObject pressToPickup;
 
 
     private Dictionary<itemType, GameObject> itemSetActive = new Dictionary<itemType, GameObject>() { };
@@ -71,7 +71,7 @@ public class PlayerInventory : MonoBehaviour
             IPickable item = hitInfo.collider.GetComponent<IPickable>();
             if (item != null)
             {
-                pressToPickup_gameobject.SetActive(true);
+                pressToPickup.SetActive(true);
                 if (Input.GetKey(pickUpItemKey))
                 {
                     inventoryList.Add(hitInfo.collider.GetComponent<ItemPickable>().itemScriprableObject.item_type);
@@ -80,12 +80,12 @@ public class PlayerInventory : MonoBehaviour
             }
             else
             {
-                pressToPickup_gameobject.SetActive(false);
+                pressToPickup.SetActive(false);
             }
         }
         else
         {
-            pressToPickup_gameobject.SetActive(false);
+            pressToPickup.SetActive(false);
         }
 
         if (Input.GetKeyDown(throwItemKey) && inventoryList.Count > 1) //&& !animationIsPlaying)
