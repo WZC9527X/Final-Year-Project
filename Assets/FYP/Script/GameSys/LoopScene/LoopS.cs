@@ -57,13 +57,13 @@ public class LoopS : CheckScene
             InstantiateScene(spawnPoint);
         }
 
-        spawnPoint.y -= nextSpawnPoint + nextSpawnPoint;
-        Debug.Log("this ScenenName: " + sceneP);
+        //spawnPoint.y -= nextSpawnPoint + nextSpawnPoint;
+        //Debug.Log("this ScenenName: " + sceneP);
 
-        if (VSPosition(spawnPoint))
-        {
-            InstantiateScene(spawnPoint);
-        }
+        //if (VSPosition(spawnPoint))
+        //{
+        //    InstantiateScene(spawnPoint);
+        //}
     }
 
     public void InstantiateScene(Vector3 spawnPoint)
