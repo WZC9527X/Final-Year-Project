@@ -46,7 +46,7 @@ public class DoorController : MonoBehaviour
         isDoorOpened = true;
         firstTimeOpening = false;
 
-        if (playerInventory.inventoryList.Count > 0 && requiresKey)
+        if (requiresKey && playerInventory.inventoryList[playerInventory.selectedItem] == itemType.Key)
         {
             playerInventory.inventoryList.RemoveAt(playerInventory.selectedItem);
             playerInventory.selectedItem = 0;

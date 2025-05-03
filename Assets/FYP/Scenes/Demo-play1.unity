@@ -3906,6 +3906,7 @@ GameObject:
   - component: {fileID: 138191593}
   - component: {fileID: 138191592}
   - component: {fileID: 138191594}
+  - component: {fileID: 138191595}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4113,7 +4114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryList: 01000000
   selectedItem: 0
-  playerReach: 15
+  playerReach: 10
   throwItem_gameobject: {fileID: 946265167}
   throwItemKey: 113
   pickUpItemKey: 101
@@ -4347,6 +4348,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &138191595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138191581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d069ed646d9b4440b362508c4efe9cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enable: 1
+  _walkAmplitude: 0.004
+  _walkFrequency: 9
+  _runAmplitude: 0.015
+  _runFrequency: 17
+  _camera: {fileID: 963194228}
+  _cameraHolder: {fileID: 374467821}
+  _playerMovement: {fileID: 138191582}
 --- !u!1 &146137646
 GameObject:
   m_ObjectHideFlags: 0
@@ -11281,7 +11302,7 @@ GameObject:
   m_Component:
   - component: {fileID: 374467821}
   m_Layer: 0
-  m_Name: Set Camera
+  m_Name: CameraHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22925,7 +22946,7 @@ PrefabInstance:
     - target: {fileID: 1330845816768711108, guid: 9237a2d05e770ec46836247d2f0145db, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: a592402f99f936744afb98eab7fd82bf, type: 2}
+      objectReference: {fileID: 2100000, guid: 06860ef450143944daf75df5baae6c4f, type: 2}
     - target: {fileID: 1330845816768711108, guid: 9237a2d05e770ec46836247d2f0145db, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
@@ -22933,7 +22954,7 @@ PrefabInstance:
     - target: {fileID: 1330845816768711108, guid: 9237a2d05e770ec46836247d2f0145db, type: 3}
       propertyPath: m_Materials.Array.data[3]
       value: 
-      objectReference: {fileID: 2100000, guid: a592402f99f936744afb98eab7fd82bf, type: 2}
+      objectReference: {fileID: 2100000, guid: 7d150058dc0a1254581aa6f65142080c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

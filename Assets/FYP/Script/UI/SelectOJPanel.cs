@@ -7,7 +7,6 @@ using UnityEngine;
 
 public class SelectOJPanel : MonoBehaviour
 {
-    private bool isDoorOpen = false;
     public PlayerInventory playerInventory;
     public GameObject eKey;
     //public GameObject AirwallText;
