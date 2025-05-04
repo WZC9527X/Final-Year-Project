@@ -45,6 +45,7 @@ public class HeadBobController : MonoBehaviour
         _camera.localPosition += motion;
     }
 
+
     private void CheckMotion()
     {
         float speed = new Vector3(_controller.velocity.x, 0, _controller.velocity.z).magnitude;
@@ -52,7 +53,7 @@ public class HeadBobController : MonoBehaviour
         if (speed < _toggleSpeed) return;
         if (!_controller.isGrounded) return;
 
-        PlayMotion(FootStepMotion(speed));
+        PlayMotion(FootStepMotion(speed)); // 恢復此行
     }
 
     private Vector3 FootStepMotion(float speed)
@@ -62,8 +63,7 @@ public class HeadBobController : MonoBehaviour
         float amplitude = speed > _playerMovement.runSpeed ? _runAmplitude : _walkAmplitude;
         float frequency = speed > _playerMovement.runSpeed ? _runFrequency : _walkFrequency;
 
-        pos.y += Mathf.Sin(Time.time * frequency) * amplitude;
-        pos.x += Mathf.Cos(Time.time * frequency / 2) * amplitude * 2;
+        pos.y += Mathf.Sin(Time.time * frequency) * amplitude; // 只影響y軸
         return pos;
     }
 
@@ -75,8 +75,6 @@ public class HeadBobController : MonoBehaviour
 
     private Vector3 FocusTarget()
     {
-        Vector3 pos = new Vector3(transform.position.x, transform.position.y + _cameraHolder.localPosition.y, transform.position.z);
-        pos += _cameraHolder.forward * 15.0f;
-        return pos;
+        return _camera.position; // 確保只返回相機位置
     }
 }
