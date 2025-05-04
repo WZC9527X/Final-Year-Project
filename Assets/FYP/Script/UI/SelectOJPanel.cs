@@ -16,6 +16,8 @@ public class SelectOJPanel : MonoBehaviour
     public string specificDoorID = "LockDoor";
 
     public static int cleanBlood;
+    public GameObject _FlashLight;
+    public GameObject _FlashLightText;
 
     void Start()
     {
@@ -97,7 +99,30 @@ public class SelectOJPanel : MonoBehaviour
             
         
        // print(selectOBJ.name);
+       if (playerInventory.inventoryList.Count > 0 && playerInventory.inventoryList[playerInventory.selectedItem] == itemType.flashlights)
+       {
+            if (_FlashLight.activeSelf)
+            {
+                _FlashLightText.SetActive(false);
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    _FlashLight.SetActive(false);
+                }
 
+            }
+            else
+            {
+                _FlashLightText.SetActive(true);
+
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    _FlashLight.SetActive(true);
+                }  
+            }
+       }else
+       {
+            _FlashLightText.SetActive(false);
+        }
 
     }
 
