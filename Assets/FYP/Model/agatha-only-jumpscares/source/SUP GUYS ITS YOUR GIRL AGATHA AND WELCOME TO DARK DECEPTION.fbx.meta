@@ -3,7 +3,27 @@ guid: 9237a2d05e770ec46836247d2f0145db
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Agatha_Dress
+    second: {fileID: 2100000, guid: c8c4362b2287ee541b6770cc4c949d99, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Agatha_Dress_metal
+    second: {fileID: 2100000, guid: 213c031953a982d4e9cfe8e42a247a27, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Agatha_Hair
+    second: {fileID: 2100000, guid: 3eea1bb2c05e49a42a3df29d0df9c4e6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Agatha_Skin
+    second: {fileID: 2100000, guid: e0ca5a9d6853cd249adb6e9afc9e6996, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -90,7 +110,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.001
+    globalScale: 0.1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

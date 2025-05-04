@@ -13,7 +13,7 @@ public class HeadBobController : MonoBehaviour
     [SerializeField, Range(0, 30)] private float _runFrequency = 15.0f;
 
     [SerializeField] private Transform _camera = null;
-    [SerializeField] private Transform _cameraHolder = null;
+    //[SerializeField] private Transform _cameraHolder = null;
     [SerializeField] private PlayerMovement _playerMovement = null;
 
     private float _toggleSpeed = 3.0f;
