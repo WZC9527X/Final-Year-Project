@@ -12,6 +12,7 @@ public class DoorController : MonoBehaviour
 
     public void Interact(PlayerInventory playerInventory)
     {
+
         bool isHoldingKey = playerInventory.inventoryList.Count > 0 && playerInventory.inventoryList[playerInventory.selectedItem] == itemType.Key;
 
         if (!isDoorOpened)
@@ -36,12 +37,25 @@ public class DoorController : MonoBehaviour
         }
         else
         {
+
             CloseDoor();
         }
+        
+
+
     }
 
     private void OpenDoor(PlayerInventory playerInventory)
     {
+        if (SelectOJPanel.selectOBJ.tag == "door")
+        {
+            AudioSystem.Instance.PlaySound("OpenDoor");
+        }
+        else if (SelectOJPanel.selectOBJ.tag == "LightSwitch")
+        {
+            AudioSystem.Instance.PlaySound("LightSwitch");
+        }
+
         doorAnimator.SetBool("open-close", true);
         isDoorOpened = true;
         firstTimeOpening = false;
@@ -55,6 +69,15 @@ public class DoorController : MonoBehaviour
 
     private void CloseDoor()
     {
+        if (SelectOJPanel.selectOBJ.tag == "door")
+        {
+            AudioSystem.Instance.PlaySound("CloseDoor");
+        }
+        else if (SelectOJPanel.selectOBJ.tag == "LightSwitch")
+        {
+            AudioSystem.Instance.PlaySound("LightSwitch");
+        }
+
         doorAnimator.SetBool("open-close", false);
         isDoorOpened = false;
     }

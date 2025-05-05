@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LightSwitch
+  m_Controller: {fileID: 9100000, guid: 856ac5c673f4e0e418d3d836a61ad0d7, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 9c8373b51f399454d9af0bb2d09e0566, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c8eaf3f5b3e080543adca792c13bfd3a, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 440ef32d0c0ada342ac82f1d72cc84d0, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 751864e8ab56de24e9bc74af1f393707, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c9df4092035b09143b7022076e65ea36, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3eebb4fa0329d654089bfbaa423008d1, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c0620ec72a4dc8f4c8a115cb36dc00e0, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2fe6f02efc6f9d641a766d68e03c42cb, type: 2}

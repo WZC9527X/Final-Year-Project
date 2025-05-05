@@ -11,6 +11,8 @@ TagManager:
   - Scene
   - Airwall
   - GameManager
+  - AudioSystem
+  - LightSwitch
   layers:
   - Default
   - TransparentFX

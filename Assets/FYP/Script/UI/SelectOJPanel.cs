@@ -73,17 +73,13 @@ public class SelectOJPanel : MonoBehaviour
                     eKey.SetActive(false);
                 }
             }
-            else if (selectOBJ.CompareTag("door"))
+            else if (selectOBJ.GetComponent<DoorController>() != null )
             {
-                DoorController doorController = selectOBJ.GetComponent<DoorController>();
-                if (doorController != null)
+                eKey.SetActive(true);
+                // 不再在这里处理提示的显示和隐藏
+                if (Input.GetKeyDown(KeyCode.E))
                 {
-                    eKey.SetActive(true);
-                    // 不再在这里处理提示的显示和隐藏
-                    if (Input.GetKeyDown(KeyCode.E))
-                    {
-                        doorController.Interact(playerInventory);
-                    }
+                    selectOBJ.GetComponent<DoorController>().Interact(playerInventory);
                 }
             }
             else
