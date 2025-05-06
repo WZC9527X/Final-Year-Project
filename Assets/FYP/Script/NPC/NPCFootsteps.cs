@@ -4,23 +4,21 @@ using UnityEngine;
 
 public class NPCFootsteps : MonoBehaviour
 {
-    public AudioSource Steps;
-    public GameObject ThePlayer;
-    public GameObject CCTV;
+    //public AudioSource Steps;
+    //public GameObject ThePlayer;
+    public GameObject Girl;
     public PlayerInventory playerInventory; // 引用玩家的物品清單
     private bool hasShowed = false;
 
     void OnTriggerEnter(Collider other)
     {
-        if (!hasShowed && other.gameObject == ThePlayer)
+        if (!hasShowed)
         {
-            // 檢查玩家是否有鎖匙
-            if (playerInventory.inventoryList.Count > 0 &&
-                playerInventory.inventoryList[playerInventory.selectedItem] == itemType.Key)
+            // 檢查玩家的物品清單中是否包含鎖匙
+            if (playerInventory.inventoryList.Contains(itemType.Key))
             {
                 hasShowed = true;
-                CCTV.SetActive(true);
-                ThePlayer.SetActive(false);
+                Girl.SetActive(true);
                 StartCoroutine(EndShow());
             }
         }
@@ -29,7 +27,6 @@ public class NPCFootsteps : MonoBehaviour
     IEnumerator EndShow()
     {
         yield return new WaitForSeconds(0.5f);
-        ThePlayer.SetActive(true);
-        CCTV.SetActive(false);
+        Girl.SetActive(false);
     }
 }

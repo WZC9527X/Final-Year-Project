@@ -13,6 +13,7 @@ TagManager:
   - GameManager
   - AudioSystem
   - LightSwitch
+  - Ground
   layers:
   - Default
   - TransparentFX
