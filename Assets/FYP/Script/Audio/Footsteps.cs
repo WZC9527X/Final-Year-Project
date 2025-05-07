@@ -4,30 +4,52 @@ using UnityEngine;
 
 public class Footsteps : MonoBehaviour
 {
-public AudioSource Walking , Running;
+    public AudioSource walking, running;
+    public Transform rayStart;
+    public float range;
+    public LayerMask layerMask;
 
-void Update()
-{
+    RaycastHit hit;
 
-    if(Input.GetKey(KeyCode.W)||Input.GetKey(KeyCode.A)||Input.GetKey(KeyCode.S)||Input.GetKey(KeyCode.D))
+    void Update()
     {
-        Walking.enabled = true;
+        bool isMoving = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D);
 
-        if(Input.GetKey(KeyCode.LeftShift))
+        if (isMoving)
         {
-            Walking.enabled = false;
-            Running.enabled = true;
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                walking.enabled = false;
+                running.enabled = true;
+                PlayFootstepSound(running);
+            }
+            else
+            {
+                running.enabled = false;
+                walking.enabled = true;
+                PlayFootstepSound(walking);
+            }
         }
         else
         {
-            Running.enabled = false;
+            walking.enabled = false;
+            running.enabled = false;
         }
     }
-    else
+
+    void PlayFootstepSound(AudioSource source)
     {
-        Walking.enabled = false;
-        Running.enabled = false;
+        if (Physics.Raycast(rayStart.position, Vector3.down, out hit, range, layerMask))
+        {
+            if (hit.collider.CompareTag("concrete"))
+            {
+                source.Play();
+            }
+        }
     }
 
-}
+    private void Check()
+    {
+        Debug.DrawRay(rayStart.position, Vector3.down * range, Color.green);
+    }
 }
