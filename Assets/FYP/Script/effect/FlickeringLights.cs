@@ -31,14 +31,23 @@ public class FlickeringLights : MonoBehaviour
         if(timer <= 0)
         {
             timer = Random.Range(min, max);
+            Debug.Log(transform.GetChild(0));
+
             if (transform.GetChild(0).gameObject.activeSelf)
             {
-                transform.GetChild(0).gameObject.SetActive(false);
-
+                for (int i = 0; i < transform.childCount; i++)
+                {
+                    var child = transform.GetChild(i);
+                    child.gameObject.SetActive(false);
+                }
             }
             else
             {
-                transform.GetChild(0).gameObject.SetActive(true);
+                for (int i = 0; i < transform.childCount; i++)
+                {
+                    var child = transform.GetChild(i);
+                    child.gameObject.SetActive(true);
+                }
             }
         }
 
