@@ -53,6 +53,7 @@ public class DoorController : MonoBehaviour
         }
         else if (SelectOJPanel.selectOBJ.tag == "LightSwitch")
         {
+            TOLight._TOLight = true;
             AudioSystem.Instance.PlaySound("LightSwitch");
         }
 
@@ -75,6 +76,7 @@ public class DoorController : MonoBehaviour
         }
         else if (SelectOJPanel.selectOBJ.tag == "LightSwitch")
         {
+            TOLight._TOLight = false;
             AudioSystem.Instance.PlaySound("LightSwitch");
         }
 

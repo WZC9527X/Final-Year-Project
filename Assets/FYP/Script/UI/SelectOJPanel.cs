@@ -18,7 +18,7 @@ public class SelectOJPanel : MonoBehaviour
     public static int cleanBlood;
     public GameObject _FlashLight;
     public GameObject _FlashLightText;
-
+    
     void Start()
     {
         Not_Key.SetActive(false);
