@@ -33,7 +33,7 @@ public class SelectOJPanel : MonoBehaviour
 
     void SelectOBJ()
     {
-       
+        //Debug.Log(selectOBJ);
         if (selectOBJ != null)
         {
             if (selectOBJ.tag == "item")
