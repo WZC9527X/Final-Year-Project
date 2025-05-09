@@ -12,17 +12,10 @@ public class SelectOJPanel : MonoBehaviour
     //public GameObject AirwallText;
     public TextMeshProUGUI selectOBJText;
     public static GameObject selectOBJ;
-    public GameObject Not_Key;
-    public string specificDoorID = "LockDoor";
 
     public static int cleanBlood;
     public GameObject _FlashLight;
     public GameObject _FlashLightText;
-    
-    void Start()
-    {
-        Not_Key.SetActive(false);
-    }
 
     void Update()
     {
@@ -76,7 +69,6 @@ public class SelectOJPanel : MonoBehaviour
             else if (selectOBJ.GetComponent<DoorController>() != null )
             {
                 eKey.SetActive(true);
-                // 不再在这里处理提示的显示和隐藏
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     selectOBJ.GetComponent<DoorController>().Interact(playerInventory);
@@ -135,42 +127,4 @@ public class SelectOJPanel : MonoBehaviour
         }
         
     }
-
-    private IEnumerator HideNotKeyAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        Not_Key.SetActive(false);
-    }
-    /*void openDoor()
-    {
-        Animator door = selectOBJ.GetComponent<Animator>();
-        bool openClose = door.GetBool("open-close");
-
-        eKey.SetActive(true);
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (!isDoorOpen)
-            {
-                if (openClose)
-                {
-                    door.SetBool("open-close", false);
-                }
-                else
-                {
-                    
-                    if (playerInventory.inventoryList.Count > 0 && playerInventory.inventoryList[playerInventory.selectedItem] == itemType.Key)
-                    {
-                        
-                        door.SetBool("open-close", true);
-                        isDoorOpen = true;
-
-                        
-                        playerInventory.inventoryList.RemoveAt(playerInventory.selectedItem);
-                        playerInventory.selectedItem = 0;
-                    }
-                }
-            }
-        }
-    }
-    */
 }

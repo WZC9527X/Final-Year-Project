@@ -7,7 +7,6 @@ public class JumpTrigger : MonoBehaviour
     public AudioSource Scream;
     public GameObject ThePlayer;
     public GameObject JumpCam;
-    //public GameObject FlashImg;
     private bool hasJumped = false;
 
     void OnTriggerEnter(Collider other)
@@ -18,7 +17,6 @@ public class JumpTrigger : MonoBehaviour
             Scream.Play();
             JumpCam.SetActive(true);
             ThePlayer.SetActive(false);
-            //FlashImg.SetActive(true);
             StartCoroutine(EndJump());
 
         }
@@ -31,7 +29,6 @@ public class JumpTrigger : MonoBehaviour
         yield return new WaitForSeconds(2.03f);
         ThePlayer.SetActive(true);
         JumpCam.SetActive(false);
-        //FlashImg.SetActive(false);
     }
 
 }

@@ -3,12 +3,11 @@ using System.Collections;
 
 public class DoorController : MonoBehaviour
 {
+    public Animator doorAnimator;
+
     private bool isDoorOpened = false;
     private bool firstTimeOpening = true;
-    public Animator doorAnimator;
-    public bool requiresKey = false;
-    public string doorID;
-    public GameObject keyPrompt;
+    public bool requiresKey = true;
 
     public void Interact(PlayerInventory playerInventory)
     {
@@ -22,17 +21,15 @@ public class DoorController : MonoBehaviour
                 if (isHoldingKey)
                 {
                     OpenDoor(playerInventory);
-                    HidePrompt();
                 }
                 else
                 {
-                    StartCoroutine(ShowPromptForDuration(2f));
+                    AudioSystem.Instance.PlaySound("Locked");
                 }
             }
             else
             {
                 OpenDoor(playerInventory);
-                HidePrompt();
             }
         }
         else
@@ -40,16 +37,13 @@ public class DoorController : MonoBehaviour
 
             CloseDoor();
         }
-        
-
 
     }
 
     private void OpenDoor(PlayerInventory playerInventory)
     {
         if (SelectOJPanel.selectOBJ.tag == "door")
-        {
-            
+        {      
             AudioSystem.Instance.PlaySound("OpenDoor");
         }
         else if (SelectOJPanel.selectOBJ.tag == "LightSwitch")
@@ -83,28 +77,5 @@ public class DoorController : MonoBehaviour
 
         doorAnimator.SetBool("open-close", false);
         isDoorOpened = false;
-    }
-
-    private void ShowPrompt()
-    {
-        if (keyPrompt != null)
-        {
-            keyPrompt.SetActive(true);
-        }
-    }
-
-    private void HidePrompt()
-    {
-        if (keyPrompt != null)
-        {
-            keyPrompt.SetActive(false);
-        }
-    }
-
-    private IEnumerator ShowPromptForDuration(float duration)
-    {
-        ShowPrompt();
-        yield return new WaitForSeconds(duration);
-        HidePrompt();
     }
 }

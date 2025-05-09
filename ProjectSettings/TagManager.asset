@@ -15,6 +15,7 @@ TagManager:
   - LightSwitch
   - Ground
   - concrete
+  - water
   layers:
   - Default
   - TransparentFX

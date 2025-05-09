@@ -6,16 +6,14 @@ public class NPCFootsteps : MonoBehaviour
 {
     public AudioSource Steps;
     public GameObject ThePlayer;
-    //public GameObject Girl;
     public GameObject Cam;
-    public PlayerInventory playerInventory; // 引用玩家的物品清單
+    public PlayerInventory playerInventory;
     private bool hasShowed = false;
 
     void Update()
     {
         if (!hasShowed)
         {
-            // 檢查玩家的物品清單中是否包含鎖匙
             if (playerInventory.inventoryList.Contains(itemType.Key))
             {
                 StartCoroutine(StartShow());
@@ -28,7 +26,7 @@ public class NPCFootsteps : MonoBehaviour
         yield return new WaitForSeconds(1f);
         hasShowed = true;
         Steps.Play();
-        yield return new WaitForSeconds(1f); // 添加小延迟
+        yield return new WaitForSeconds(1f);
         ThePlayer.SetActive(false);
         Cam.SetActive(true);
         StartCoroutine(EndShow());
@@ -36,9 +34,9 @@ public class NPCFootsteps : MonoBehaviour
     IEnumerator EndShow()
     {
         yield return new WaitForSeconds(2.5f);
+        hasShowed = true;
         Steps.Stop();
         ThePlayer.SetActive(true);
         Cam.SetActive(false);
-        //Girl.SetActive(false);
     }
 }
