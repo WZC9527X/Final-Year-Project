@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2003735563819283486}
   - component: {fileID: 5929847628130370195}
   - component: {fileID: 7552713684488112916}
+  - component: {fileID: 4541137353797594571}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -124,6 +125,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!225 &4541137353797594571
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4227787713716066148}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &4615597120391050449
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,7 +195,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0618fc5a1788b084085c30f1569557a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 7552713684488112916}
+  _LevelLoaderCanvas: {fileID: 4227787713716066148}
+  _EnableLevelLoaderEffect: 0
 --- !u!1 &8362176106761243925
 GameObject:
   m_ObjectHideFlags: 0
