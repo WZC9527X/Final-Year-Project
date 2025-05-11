@@ -12,7 +12,7 @@ public class DynamicDepthofField : MonoBehaviour
     float hitDistance;
 
     public Volume _volume;
-    public float focusSpeed;
+    public float focusSpeed = 1f;
     DepthOfField doff;
 
     void Start()
@@ -29,7 +29,7 @@ public class DynamicDepthofField : MonoBehaviour
         if (Physics.Raycast(raycast, out hit, 100f))
         {
             ishit = true;
-            hitDistance = Vector3.Distance(transform.position, hit.point)/5;
+            hitDistance = Vector3.Distance(transform.position, hit.point);
             //Debug.Log("Hit");
         }
         else
@@ -44,13 +44,13 @@ public class DynamicDepthofField : MonoBehaviour
 
     void SetFocus()
     {
-        if (hitDistance <= 1.5f)
-        {
-            hitDistance = 1.51f;
-        }
+        //if (hitDistance <= 1.5f)
+        //{
+        //    hitDistance = 1.51f;
+        //}
         doff.focusDistance.value = Mathf.Lerp(doff.focusDistance.value, hitDistance, Time.deltaTime * focusSpeed);
         //Debug.Log("hitDistance: " + hitDistance);
-        //Debug.Log(doff.focusDistance.value);
+        Debug.Log(doff.focusDistance.value);
 
     }
 
