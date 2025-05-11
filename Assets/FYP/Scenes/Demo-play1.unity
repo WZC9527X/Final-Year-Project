@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.029692445, g: 0.030522529, b: 0.030513588, a: 1}
+  m_IndirectSpecularColor: {r: 0.029692445, g: 0.030522708, b: 0.030513588, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6752,7 +6752,7 @@ GameObject:
   - component: {fileID: 209825905}
   m_Layer: 7
   m_Name: floor_stains (2)
-  m_TagString: water
+  m_TagString: blood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43943,7 +43943,7 @@ GameObject:
   - component: {fileID: 1219089069}
   m_Layer: 7
   m_Name: floor_stains (1)
-  m_TagString: water
+  m_TagString: blood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
