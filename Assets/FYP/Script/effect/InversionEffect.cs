@@ -4,7 +4,7 @@ using UnityEngine;
 public class InversionEffect : MonoBehaviour
 {
     //public Volume _ppv;
-    public GameObject playerCameraParent;
+    GameObject playerCameraParent;
     //Vignette v_vignette;
     public Animator winking;
     private Vector3 currentEuler;
@@ -16,7 +16,7 @@ public class InversionEffect : MonoBehaviour
         //v_vignette.intensity.value = 0f;
         //v_vignette.smoothness.value = 0.1f;
         //v_vignette.roundness.value = 1f;
-    
+        playerCameraParent = GameObject.FindGameObjectWithTag("CameraHolder");
     }
 
 

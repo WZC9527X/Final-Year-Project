@@ -16,6 +16,7 @@ TagManager:
   - Ground
   - concrete
   - water
+  - CameraHolder
   layers:
   - Default
   - TransparentFX

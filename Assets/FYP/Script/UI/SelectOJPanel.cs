@@ -109,6 +109,7 @@ public class SelectOJPanel : MonoBehaviour
             }
        }else
        {
+            _FlashLight.SetActive(false);
             _FlashLightText.SetActive(false);
         }
 
