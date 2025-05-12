@@ -38,16 +38,17 @@ public class DynamicDepthofField : MonoBehaviour
             {
                 hitDistance++;
             }
+
         }
         SetFocus();
     }
 
     void SetFocus()
     {
-        //if (hitDistance <= 1.5f)
-        //{
-        //    hitDistance = 1.51f;
-        //}
+        if (hitDistance >= 5f)
+        {
+            hitDistance = hitDistance - 2f;
+        }
         doff.focusDistance.value = Mathf.Lerp(doff.focusDistance.value, hitDistance, Time.deltaTime * focusSpeed);
         //Debug.Log("hitDistance: " + hitDistance);
         Debug.Log(doff.focusDistance.value);
