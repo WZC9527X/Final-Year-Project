@@ -7,30 +7,26 @@ public class NPCFootsteps : MonoBehaviour
     public AudioSource Steps;
     public GameObject ThePlayer;
     public GameObject Cam;
-    public PlayerInventory playerInventory;
     private bool hasShowed = false;
 
-    void Update()
+    void OnTriggerEnter(Collider other)
     {
         if (!hasShowed)
         {
-            if (playerInventory.inventoryList.Contains(itemType.Key))
-            {
-                StartCoroutine(StartShow());
-            }
+            StartCoroutine(StartShow());
         }
     }
 
     IEnumerator StartShow()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         hasShowed = true;
         Steps.Play();
-        yield return new WaitForSeconds(1f);
         ThePlayer.SetActive(false);
         Cam.SetActive(true);
         StartCoroutine(EndShow());
     }
+
     IEnumerator EndShow()
     {
         yield return new WaitForSeconds(2.5f);

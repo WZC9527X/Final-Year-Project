@@ -5,32 +5,26 @@ using UnityEngine;
 public class JumpTrigger : MonoBehaviour
 {
     public AudioSource Scream;
-    public GameObject ThePlayer;
     public GameObject JumpCam;
     private bool hasJumped = false;
 
     void OnTriggerEnter(Collider other)
     {
-        if (!hasJumped && other.gameObject == ThePlayer)
+        // 檢查進入觸發的物件是否是玩家
+        if (!hasJumped && other.CompareTag("Player") && SelectOJPanel.cleanBlood >= 3)
         {
             hasJumped = true;
             Scream.Play();
             JumpCam.SetActive(true);
-            ThePlayer.SetActive(false);
-            StartCoroutine(EndJump());
-
+            other.gameObject.SetActive(false); // 將玩家物件禁用
+            StartCoroutine(EndJump(other.gameObject)); // 傳遞玩家物件
         }
-
     }
-    
 
-    IEnumerator EndJump()
+    IEnumerator EndJump(GameObject Player)
     {
         yield return new WaitForSeconds(2.03f);
-        ThePlayer.SetActive(true);
+        Player.SetActive(true); // 恢復玩家物件
         JumpCam.SetActive(false);
     }
-
 }
-
-
