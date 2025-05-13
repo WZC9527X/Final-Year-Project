@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class RayDetection : MonoBehaviour
 {
-    
 
     public void Update()
     {
@@ -17,27 +16,15 @@ public class RayDetection : MonoBehaviour
         // check ray collision
         if (Physics.Raycast(ray, out hit, 10))
         {
-            GameObject hitOJ = hit.transform.gameObject;
-            //print(hit.transform.gameObject.name);
+            //GameObject hitOJ = hit.transform.gameObject;
             Debug.DrawRay(ray.origin, hit.transform.position, Color.red);
 
-            //Debug.Log(hit.transform.gameObject);
-            //Debug.Log(hit.transform.gameObject.name);
-            
-            
             SelectOJPanel.selectOBJ = hit.transform.gameObject;
-
-            
 
         }
         else
         {
-            //hit no collisions
-        /*    if(hit.collider == null)
-            {
-               
-            }
-        */
+
             SelectOJPanel.selectOBJ = null;
         }
     }   

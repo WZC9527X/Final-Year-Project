@@ -1,10 +1,15 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public bool hideMouse;
 
     public static GameManager Instance = null;
+    public Volume _Volume;
 
     void Start()
     {
@@ -17,6 +22,8 @@ public class GameManager : MonoBehaviour
             MouseControl(true);
         }
 
+        StartCoroutine(_setVolume(0.1f));
+        Debug.Log("next Level: " + LoopScene._LevelCount);
     }
 
     void Update()
@@ -48,10 +55,14 @@ public class GameManager : MonoBehaviour
 
     }
 
-    
-    
-   
 
-    
+    public IEnumerator _setVolume(float time)
+    {
+        _Volume.weight = 0f;
+        yield return new WaitForSeconds(time);
+        _Volume.weight = 1f;
+    }
+
+
 
 }

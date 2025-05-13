@@ -17,6 +17,13 @@ public class SelectOJPanel : MonoBehaviour
     public GameObject _FlashLight;
     public GameObject _FlashLightText;
 
+
+    string[] GameObj_tag =
+    {
+        "item",
+        "LightSwitch",
+    };
+
     void Update()
     {
         // itemPickup();
@@ -29,17 +36,17 @@ public class SelectOJPanel : MonoBehaviour
         //Debug.Log(selectOBJ);
         if (selectOBJ != null)
         {
-            if (selectOBJ.tag == "item")
-            {
-                eKey.SetActive(true);
+            //if (selectOBJ.tag == "item")
+            //{
+            //    eKey.SetActive(true);
 
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    //    print(item.tag);
-                    Destroy(selectOBJ);
-                }
-            }
-            else if (selectOBJ.tag == "blood")
+            //    if (Input.GetKeyDown(KeyCode.E))
+            //    {
+            //        //    print(item.tag);
+            //        Destroy(selectOBJ);
+            //    }
+            //}
+            if (selectOBJ.tag == "blood")
             {
                 /*
                 var spriteRenderer = selectOBJ.GetComponent<SpriteRenderer>();
@@ -65,8 +72,7 @@ public class SelectOJPanel : MonoBehaviour
                 {
                     eKey.SetActive(false);
                 }
-            }
-            else if (selectOBJ.GetComponent<DoorController>() != null )
+            }else if (selectOBJ.GetComponent<DoorController>() != null )
             {
                 eKey.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
@@ -117,10 +123,27 @@ public class SelectOJPanel : MonoBehaviour
 
     void DisplayOJ()
     {
-        if(selectOBJ != null)
+        
+        if (selectOBJ != null)
         {
-            selectOBJText.text = selectOBJ.name;
-            
+            bool _var = false;
+            for (int i = 0; i < GameObj_tag.Length; i++)
+            {
+                if (selectOBJ.tag == GameObj_tag[i])
+                {
+                    _var = true;
+                }
+            }
+
+            if (_var)
+            {
+                //Debug.Log(selectOBJ.name);
+                selectOBJText.text = selectOBJ.name;
+            }
+            else
+            {
+                selectOBJText.text = "";
+            }
         }
         else
         {
