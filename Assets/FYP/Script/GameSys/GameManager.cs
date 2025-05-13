@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
             MouseControl(true);
         }
 
+
     }
 
     void Update()

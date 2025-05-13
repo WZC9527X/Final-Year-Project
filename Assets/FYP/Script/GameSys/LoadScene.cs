@@ -55,7 +55,7 @@ public class LoadScene : MonoBehaviour
     {
         int scene = SceneManager.GetActiveScene().buildIndex;
         StartCoroutine(LevelLoaderEffect.LoadLevel(scene));
-
+        LoopScene._LevelCount = 1;
     }
 
     public void setting()
