@@ -35,7 +35,7 @@ public class LoopScene : MonoBehaviour
 
         }
 
-        Debug.Log("LevelCount: " + _LevelCount);
+        Debug.Log("next Level: " + _LevelCount);
 
     }
 

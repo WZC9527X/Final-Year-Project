@@ -137,7 +137,7 @@ public class SelectOJPanel : MonoBehaviour
 
             if (_var)
             {
-                Debug.Log(selectOBJ.name);
+                //Debug.Log(selectOBJ.name);
                 selectOBJText.text = selectOBJ.name;
             }
             else
