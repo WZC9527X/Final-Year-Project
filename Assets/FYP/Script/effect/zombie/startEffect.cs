@@ -5,6 +5,7 @@ using UnityEngine;
 public class tr : MonoBehaviour
 {
     public Animator animator;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
