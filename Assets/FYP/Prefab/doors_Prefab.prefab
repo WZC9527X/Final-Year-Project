@@ -147,7 +147,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorAnimator: {fileID: 7369638881116578075}
   requiresKey: 0
-  doorID: 
 --- !u!1 &1359012323291035348
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,7 +340,7 @@ Transform:
   m_GameObject: {fileID: 4653179209328663138}
   serializedVersion: 2
   m_LocalRotation: {x: 0.00000001545431, y: -0.70710677, z: -0.00000001545431, w: 0.7071068}
-  m_LocalPosition: {x: -1.9621964, y: -4.5000005, z: 4.3473997}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_ConstrainProportionsScale: 1
   m_Children:

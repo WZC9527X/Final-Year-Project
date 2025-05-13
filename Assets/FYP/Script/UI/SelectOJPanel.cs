@@ -29,17 +29,17 @@ public class SelectOJPanel : MonoBehaviour
         //Debug.Log(selectOBJ);
         if (selectOBJ != null)
         {
-            if (selectOBJ.tag == "item")
-            {
-                eKey.SetActive(true);
+            //if (selectOBJ.tag == "item")
+            //{
+            //    eKey.SetActive(true);
 
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    //    print(item.tag);
-                    Destroy(selectOBJ);
-                }
-            }
-            else if (selectOBJ.tag == "blood")
+            //    if (Input.GetKeyDown(KeyCode.E))
+            //    {
+            //        //    print(item.tag);
+            //        Destroy(selectOBJ);
+            //    }
+            //}
+            if (selectOBJ.tag == "blood")
             {
                 /*
                 var spriteRenderer = selectOBJ.GetComponent<SpriteRenderer>();

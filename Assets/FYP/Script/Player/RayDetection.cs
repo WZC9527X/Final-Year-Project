@@ -5,7 +5,12 @@ using UnityEngine;
 
 public class RayDetection : MonoBehaviour
 {
-    
+
+    string[] GameObj_tag =
+    {
+        "item",
+        "LightSwitch",
+    };
 
     public void Update()
     {
@@ -23,9 +28,16 @@ public class RayDetection : MonoBehaviour
 
             //Debug.Log(hit.transform.gameObject);
             //Debug.Log(hit.transform.gameObject.name);
+
+            for (int i = 0; i < GameObj_tag.Length; i++)
+            {
+                if (hit.transform.gameObject.tag == GameObj_tag[i])
+                {
+                    SelectOJPanel.selectOBJ = hit.transform.gameObject;
+
+                }
+            }
             
-            
-            SelectOJPanel.selectOBJ = hit.transform.gameObject;
 
             
 
