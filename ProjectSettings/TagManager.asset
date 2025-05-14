@@ -20,6 +20,7 @@ TagManager:
   - key
   - Flashlight
   - WinkingEffectCanvas
+  - Wall
   layers:
   - Default
   - TransparentFX
