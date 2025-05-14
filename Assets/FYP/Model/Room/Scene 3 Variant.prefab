@@ -691,6 +691,10 @@ PrefabInstance:
       value: 95
       objectReference: {fileID: 0}
     - target: {fileID: 1372968295498113351, guid: d82c49f4f0181dc42a7ed1c6cd4b9dc4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372968295498113351, guid: d82c49f4f0181dc42a7ed1c6cd4b9dc4, type: 3}
       propertyPath: _SelectLight.Array.data[0]
       value: 
       objectReference: {fileID: 0}
@@ -777,6 +781,10 @@ PrefabInstance:
     - target: {fileID: 2082594457543254629, guid: d82c49f4f0181dc42a7ed1c6cd4b9dc4, type: 3}
       propertyPath: m_VersionIndex
       value: 4078
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094789579563247044, guid: d82c49f4f0181dc42a7ed1c6cd4b9dc4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2094789579563247044, guid: d82c49f4f0181dc42a7ed1c6cd4b9dc4, type: 3}
       propertyPath: _SelectLight.Array.data[0]
@@ -1045,6 +1053,10 @@ PrefabInstance:
     - target: {fileID: 3770224106024926727, guid: d82c49f4f0181dc42a7ed1c6cd4b9dc4, type: 3}
       propertyPath: m_VersionIndex
       value: 3248
+      objectReference: {fileID: 0}
+    - target: {fileID: 3782640770035218892, guid: d82c49f4f0181dc42a7ed1c6cd4b9dc4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3782640770035218892, guid: d82c49f4f0181dc42a7ed1c6cd4b9dc4, type: 3}
       propertyPath: _SelectLight.Array.data[0]
