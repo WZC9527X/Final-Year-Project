@@ -6,7 +6,7 @@ public class InversionEffect : MonoBehaviour
     //public Volume _ppv;
     GameObject playerCameraParent;
     //Vignette v_vignette;
-    public Animator winking;
+    Animator winking;
     private Vector3 currentEuler;
 
     private void Start()
@@ -17,6 +17,7 @@ public class InversionEffect : MonoBehaviour
         //v_vignette.smoothness.value = 0.1f;
         //v_vignette.roundness.value = 1f;
         playerCameraParent = GameObject.FindGameObjectWithTag("CameraHolder");
+        winking = GameObject.FindGameObjectWithTag("WinkingEffectCanvas").GetComponent<Animator>();
     }
 
 

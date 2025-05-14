@@ -19,6 +19,7 @@ TagManager:
   - CameraHolder
   - key
   - Flashlight
+  - WinkingEffectCanvas
   layers:
   - Default
   - TransparentFX

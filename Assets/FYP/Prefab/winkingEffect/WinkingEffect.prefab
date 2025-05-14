@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 8397710866186248805}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: WinkingEffectCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -387,4 +387,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f28d20478f11f24f86b8916d5894541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winking: {fileID: 230391826036242290}
