@@ -14,6 +14,7 @@ public class EndingNPC : MonoBehaviour
     public Image blackImage;
     public GameObject toBeContinuedImage;
     private bool hasShowed = false;
+    private Animation toBeContinuedAnimation;
 
     void Start()
     {
@@ -21,6 +22,8 @@ public class EndingNPC : MonoBehaviour
         {
             blackImage.color = new Color(0, 0, 0, 0);
         }
+
+        toBeContinuedAnimation = toBeContinuedImage.GetComponent<Animation>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -42,7 +45,8 @@ public class EndingNPC : MonoBehaviour
         yield return StartCoroutine(FadeToBlack());
 
         toBeContinuedImage.SetActive(true);
-        yield return new WaitForSeconds(3f);
+        toBeContinuedAnimation.Play();
+        yield return new WaitForSeconds(7f);
 
         SceneManager.LoadScene("Demo-Start");
     }
