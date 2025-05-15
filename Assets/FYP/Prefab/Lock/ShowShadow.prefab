@@ -719,7 +719,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 80341756840308496}
-  - component: {fileID: 5810241194585813868}
   - component: {fileID: 8369025666879246715}
   m_Layer: 0
   m_Name: ShowShadow
@@ -745,21 +744,6 @@ Transform:
   - {fileID: 5858555732365567024}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5810241194585813868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3409587583798121031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da1724d51a0d8044da49123a137fed8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInventory: {fileID: 0}
-  Steps: {fileID: 8341558352051851077}
-  Cam: {fileID: 461654797390092453}
 --- !u!65 &8369025666879246715
 BoxCollider:
   m_ObjectHideFlags: 0
