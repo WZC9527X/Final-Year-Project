@@ -23,6 +23,12 @@ public class EndingNPC : MonoBehaviour
             blackImage.color = new Color(0, 0, 0, 0);
         }
 
+        RectTransform rt = blackImage.GetComponent<RectTransform>();
+        rt.anchorMin = new Vector2(0, 0);
+        rt.anchorMax = new Vector2(1, 1);
+        rt.offsetMin = new Vector2(0, 0);
+        rt.offsetMax = new Vector2(0, 0);
+
         toBeContinuedAnimation = toBeContinuedImage.GetComponent<Animation>();
     }
 

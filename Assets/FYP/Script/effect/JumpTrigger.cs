@@ -8,14 +8,15 @@ public class JumpTrigger : MonoBehaviour
 {
     public AudioSource Scream;
     public GameObject JumpCam;
-    public Image blackScreen;
+    public GameObject FlashImage;
+    public Image blackImage;
     private bool hasJumped = false;
 
     void Start()
     {
-        if (blackScreen != null)
+        if (blackImage != null)
         {
-            blackScreen.color = new Color(0, 0, 0, 0);
+            blackImage.color = new Color(0, 0, 0, 0);
         }
     }
 
@@ -24,6 +25,7 @@ public class JumpTrigger : MonoBehaviour
         if (!hasJumped && other.CompareTag("Player"))
         {
             hasJumped = true;
+            FlashImage.SetActive(true);
             Scream.Play();
             JumpCam.SetActive(true);
             other.gameObject.SetActive(false);
@@ -34,10 +36,11 @@ public class JumpTrigger : MonoBehaviour
     IEnumerator EndJump(GameObject Player)
     {
         yield return new WaitForSeconds(2.03f);
-        JumpCam.SetActive(false);
-        Player.SetActive(true);
+        FlashImage.SetActive(false);
 
         yield return StartCoroutine(FadeToBlack());
+        JumpCam.SetActive(false);
+        Player.SetActive(true);
 
         SceneManager.LoadScene("End");
 
@@ -52,7 +55,7 @@ public class JumpTrigger : MonoBehaviour
         while (elapsed < duration)
         {
             elapsed += Time.deltaTime;
-            blackScreen.color = new Color(0, 0, 0, Mathf.Clamp01(elapsed / duration));
+            blackImage.color = new Color(0, 0, 0, Mathf.Clamp01(elapsed / duration));
             yield return null;
         }
     }
