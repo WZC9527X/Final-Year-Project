@@ -7,7 +7,7 @@ public class InversionEffect : MonoBehaviour
     GameObject playerCameraParent;
     //Vignette v_vignette;
     Animator winking;
-    private Vector3 currentEuler;
+    Vector3 currentEuler;
 
     private void Start()
     {
@@ -26,7 +26,6 @@ public class InversionEffect : MonoBehaviour
         if(other.tag == "Player")
         {
             StartCoroutine(WinkingEffect());
-
         }
     }
 
@@ -50,7 +49,7 @@ public class InversionEffect : MonoBehaviour
         playerCameraParent.transform.localRotation = Quaternion.identity;
 
         //Debug.Log(winking.transform.gameObject);
-        winking.transform.gameObject.SetActive(false);
+        //winking.transform.gameObject.SetActive(false);
         gameObject.SetActive(false);
     }
 

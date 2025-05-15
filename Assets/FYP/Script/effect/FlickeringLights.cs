@@ -31,7 +31,7 @@ public class FlickeringLights : MonoBehaviour
         if(timer <= 0)
         {
             timer = Random.Range(min, max);
-            Debug.Log(transform.GetChild(0));
+            //Debug.Log(transform.GetChild(0));
 
             if (transform.GetChild(0).gameObject.activeSelf)
             {
