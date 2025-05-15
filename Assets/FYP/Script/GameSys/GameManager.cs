@@ -26,13 +26,6 @@ public class GameManager : MonoBehaviour
         Debug.Log("next Level: " + LoopScene._LevelCount);
     }
 
-    void Update()
-    {
-       
-
-        
-    }
-
     public void MouseControl(bool YN)
     {
         if (YN)

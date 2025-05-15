@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class EndingNPC : MonoBehaviour
 {
-    public AudioSource Steps;
+    
+    public AudioSource toBeContinuedAudio;
+
     public GameObject ThePlayer;
     public GameObject Cam;
     public Image blackImage;
@@ -26,7 +28,8 @@ public class EndingNPC : MonoBehaviour
         if (!hasShowed)
         {
             hasShowed = true;
-            Steps.Play();
+            
+            toBeContinuedAudio.Play();
             ThePlayer.SetActive(false);
             Cam.SetActive(true);
             StartCoroutine(EndShow());
