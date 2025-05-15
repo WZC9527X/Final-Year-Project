@@ -13,7 +13,7 @@ public class SelectOJPanel : MonoBehaviour
     public TextMeshProUGUI selectOBJText;
     public static GameObject selectOBJ;
 
-    public static int cleanBlood;
+    
     public GameObject _FlashLight;
     public GameObject _FlashLightText;
 
@@ -63,7 +63,7 @@ public class SelectOJPanel : MonoBehaviour
 
                     if (Input.GetKeyDown(KeyCode.E))
                     {
-                        cleanBlood += 1;
+                        LoopScene.cleanBlood += 1;
                         print(selectOBJ);
                         Destroy(selectOBJ);
                     }

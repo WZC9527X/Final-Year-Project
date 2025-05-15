@@ -6,6 +6,7 @@ public class LoopScene : MonoBehaviour
     public GameObject[] _allScenePrefab;
     //public static GameObject[] allScenePrefab;
     public static int _LevelCount = 1;
+    public static int cleanBlood;
 
     private void Start()
     {
@@ -49,13 +50,14 @@ public class LoopScene : MonoBehaviour
     {
         if (LoopS.sceneP.transform.Find("Rubbish") != null)
         {
-            Debug.Log("Rubbish Count: " + LoopS.sceneP.transform.Find("Rubbish").childCount);
+            Debug.Log("Clean rubbish count: " + LoopS.sceneP.transform.Find("Rubbish").childCount);
 
             if (LoopS.sceneP.transform.Find("Rubbish").childCount <= 0)
             {
                 Debug.Log("Go to 2 levels");
 
                 LevelCount();
+                Destroy(LoopS.sceneP.transform.Find("Rubbish").gameObject);
             }
         }
  
@@ -63,25 +65,25 @@ public class LoopScene : MonoBehaviour
 
     public void Level_2()
     {
-        Debug.Log("cleanBlood: " + SelectOJPanel.cleanBlood);
-        if (SelectOJPanel.cleanBlood >= 5)
+        if (LoopS.sceneP.transform.Find("Blood") != null)
         {
-            Debug.Log("Go to 3 levels");
+            Debug.Log("remainin Blood count: " + (LoopS.sceneP.transform.Find("Blood").childCount - cleanBlood));
 
-            LevelCount();
-            SelectOJPanel.cleanBlood = 0;
+            if (LoopS.sceneP.transform.Find("Blood").childCount <= 0)
+            {
+                Debug.Log("Go to 3 levels");
+
+                LevelCount();
+                Destroy(LoopS.sceneP.transform.Find("Blood").gameObject);
+                cleanBlood = 0;
+            }
         }
-        //Debug.Log("unconditional");
     }
 
     public void Level_3()
     {
 
     }
-
-
-
-
 }
 
 

@@ -117,7 +117,7 @@ public class LoopS : CheckScene
             {
                 Debug.Log(LoopScene._LevelCount);
                 Debug.Log(level);
-                Debug.Log("Scene name: " + allScene[i] + " scene level : " + TagManager(allScene[i]));
+                Debug.Log("Scene name: " + allScene[i] + " Scene level : " + TagManager(allScene[i]));
                 if (level != LoopScene._LevelCount)
                 {
                     if (level == TagManager(allScene[i]))

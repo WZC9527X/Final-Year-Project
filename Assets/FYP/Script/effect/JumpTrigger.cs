@@ -11,7 +11,7 @@ public class JumpTrigger : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         // 檢查進入觸發的物件是否是玩家
-        if (!hasJumped && other.CompareTag("Player") && SelectOJPanel.cleanBlood >= 3)
+        if (!hasJumped && other.CompareTag("Player") && LoopScene.cleanBlood >= 3)
         {
             hasJumped = true;
             Scream.Play();
